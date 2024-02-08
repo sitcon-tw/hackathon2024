@@ -1,5 +1,6 @@
 'use client';
 
+import dynamic from 'next/dynamic';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import { SvgIconComponent } from '@mui/icons-material';
@@ -52,8 +53,13 @@ export default function InfoCard(props: InfoCardProps) {
           {headline}
         </Typography>
       )}
-      <Typography variant="body1" color="textSecondary" sx={{ whiteSpace: 'pre-line' }}>
-        {markdown ? <Markdown>{text}</Markdown> : text}
+      <Typography
+        component={markdown ? Markdown : 'div'}
+        variant="body1"
+        color="textSecondary"
+        sx={{ whiteSpace: 'pre-line' }}
+      >
+        {text}
       </Typography>
     </>
   );
