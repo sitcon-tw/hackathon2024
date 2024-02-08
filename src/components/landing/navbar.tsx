@@ -1,6 +1,7 @@
 'use client';
 
 import { useTheme } from '@mui/material/styles';
+import Box from '@mui/material/Box';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
@@ -11,8 +12,8 @@ const teko = Teko({ subsets: [], weight: '500' });
 export default function Navbar() {
   const { shadows, palette } = useTheme();
   return (
-    <nav>
-      <AppBar position="sticky" sx={{ boxShadow: shadows[6], bgcolor: palette.common.white }}>
+    <Box component="nav" position="sticky" height="min-content" sx={{ height: 60 }}>
+      <AppBar sx={{ boxShadow: shadows[6], bgcolor: palette.common.white }}>
         <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
           <div>
             <Typography
@@ -27,6 +28,6 @@ export default function Navbar() {
           </div>
         </Toolbar>
       </AppBar>
-    </nav>
+    </Box>
   );
 }

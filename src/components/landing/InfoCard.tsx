@@ -34,7 +34,7 @@ export default function InfoCard(props: InfoCardProps) {
           justifyContent: 'center',
           alignItems: 'center',
           marginBottom: spacing(3),
-          padding: spacing(1)
+          padding: `calc(${spacing(1)} * 1.5)`
         }}
       >
         <Icon sx={{ fontSize: 30 }} />
