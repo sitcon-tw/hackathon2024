@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 
-import InfoCard from './components/InfoCard';
+import InfoCard from '@/components/landing/InfoCard';
 import infos from './infomationList';
 
 export default function LandingPage() {

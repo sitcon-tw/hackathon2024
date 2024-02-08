@@ -1,4 +1,4 @@
-import { InfoCardProps } from './components/InfoCard';
+import { InfoCardProps } from '@/components/landing/InfoCard';
 import EmojiObjects from '@mui/icons-material/EmojiObjects';
 import Group from '@mui/icons-material/Group';
 import Info from '@mui/icons-material/Info';
