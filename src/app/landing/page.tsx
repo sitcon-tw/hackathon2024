@@ -14,7 +14,7 @@ export default function LandingPage() {
   return (
     <Box component="main" sx={{ pb: spacing(10), bgcolor: '#fff' }}>
       <Image
-        src="/images/landing-banner.jpg"
+        src="/images/landing-banner.png"
         alt="landing-banner"
         width={0}
         height={0}
