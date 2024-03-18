@@ -8,15 +8,13 @@ import { useTheme } from '@mui/material/styles';
 
 import InfoCard from '@/components/landing/InfoCard';
 import infos from './infomationList';
-import banner from '../../../public/images/landing-banner.png'
 
 export default function LandingPage() {
   const { spacing, breakpoints } = useTheme();
   return (
     <Box component="main" sx={{ pb: spacing(10), bgcolor: '#fff' }}>
       <Image
-        // src="/images/landing-banner.png"
-        src={banner}
+        src={`/2024/images/landing-banner.png`}
         alt="landing-banner"
         width={0}
         height={0}

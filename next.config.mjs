@@ -5,7 +5,7 @@ const nextConfig = {
   images: {
     unoptimized: true
   },
-  basePath: '/2024'
+  basePath: '/2024',
 };
 
 export default nextConfig;
