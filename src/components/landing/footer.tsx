@@ -58,16 +58,16 @@ export default function Footer() {
         <Box sx={{ [breakpoints.up('sm')]: { gridArea: '2 / 2 / 3 / 3' } }}>
           <Typography variant="h6">社群媒體</Typography>
           <Typography>
-            <Link href="#">
+            <Link href="https://sitcon.org/fb">
               <FacebookOutlined />
             </Link>
-            <Link href="#">
+            <Link href="https://sitcon.org/instagram">
               <Instagram />
             </Link>
-            <Link href="#">
+            <Link href="https://sitcon.org/tg">
               <Telegram />
             </Link>
-            <Link href="#">
+            <Link href="https://sitcon.org/yt">
               <YouTube />
             </Link>
           </Typography>
