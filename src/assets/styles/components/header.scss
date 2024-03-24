@@ -1,0 +1,94 @@
+@import '../shared/breakpoints';
+@import '../shared/colors';
+
+#header {
+  @include toUp('lg') {
+    max-width: 1280px;
+
+    .hamburger {
+      display: none;
+    }
+
+    .close {
+      display: none;
+    }
+  }
+
+  max-width: 960px;
+  padding: 40px 20px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  #nav {
+    transition-property: width;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-out;
+
+    @include toUp('lg') {
+      display: flex;
+      flex-grow: 1;
+      justify-content: space-around;
+
+      a {
+        font-family: Noto Sans TC;
+        font-weight: 700;
+        font-size: 20px;
+      }
+
+      a.active {
+        text-decoration: underline;
+      }
+    }
+
+    @include toDown('md') {
+      position: fixed;
+      width: 0;
+      height: 100dvh;
+      right: 0;
+      top: 0;
+      padding: 100px 0;
+
+      overflow-x: hidden;
+      overflow-y: auto;
+      font-size: 20px;
+
+      display: flex;
+      flex-direction: column;
+      row-gap: 70px;
+      align-items: center;
+
+      background: $background-dark;
+      background-image: url('../../images//SITCON\ team.svg');
+      background-repeat: no-repeat;
+      background-position: center 100%;
+      opacity: 0.9;
+      backdrop-filter: blur(10px);
+
+      .close {
+        position: fixed;
+        display: block;
+        top: 50px;
+        right: 50px;
+      }
+
+      &.active {
+        width: 100vw;
+      }
+    }
+  }
+
+  .caption {
+    font-family: Rubik One;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 33.6px;
+    text-align: center;
+    margin: 0 10px;
+  }
+
+  svg {
+    font-size: 32px;
+  }
+}
