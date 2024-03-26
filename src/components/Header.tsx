@@ -22,7 +22,10 @@ export default function Header() {
       <Link className="caption" href="/">
         SITCON Hackathon
       </Link>
-      <AiOutlineMenu className="hamburger" onClick={() => toggle.on()} />
+      <div className="mobile-options">
+        <button className="btn-color">活動報名</button>
+        <AiOutlineMenu onClick={() => toggle.on()} />
+      </div>
       <nav id="nav" className={clsx({ active: toggle.isOpen })}>
         <AiOutlineClose className="close" onClick={toggle.off} />
         {options.map(({ href, label }) => (
