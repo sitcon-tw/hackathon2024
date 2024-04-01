@@ -1,0 +1,79 @@
+@use 'sass:map';
+
+$xl: 1980px;
+$lg: 1200px;
+$md: 960px;
+$sm: 600px;
+$xs: 480px;
+
+@mixin only($bp) {
+  @if $bp == 'xl' {
+    @media screen and (min-width: $xl) {
+      @content;
+    }
+  }
+
+  @if $bp == 'lg' {
+    @media screen and (min-width: $lg) and (max-width: ($xl - 0.1px)) {
+      @content;
+    }
+  }
+
+  @if $bp == 'md' {
+    @media screen and (min-width: $md) and (max-width: ($lg - 0.1px)) {
+      @content;
+    }
+  }
+
+  @if $bp == 'sm' {
+    @media screen and (min-width: $sm) and (max-width: ($md - 0.1px)) {
+      @content;
+    }
+  }
+
+  @if $bp == 'xs' {
+    @media screen and (min-width: $xs) and (max-width: ($sm - 0.1px)) {
+      @content;
+    }
+  }
+}
+
+@mixin toDown($bp) {
+  @if $bp == 'lg' {
+    @media screen and (max-width: ($xl - 0.1px)) {
+      @content;
+    }
+  }
+
+  @if $bp == 'md' {
+    @media screen and (max-width: ($lg - 0.1px)) {
+      @content;
+    }
+  }
+
+  @if $bp == 'sm' {
+    @media screen and (max-width: ($md - 0.1px)) {
+      @content;
+    }
+  }
+}
+
+@mixin toUp($bp) {
+  @if $bp == 'lg' {
+    @media screen and (min-width: $lg) {
+      @content;
+    }
+  }
+
+  @if $bp == 'md' {
+    @media screen and (min-width: $md) {
+      @content;
+    }
+  }
+
+  @if $bp == 'sm' {
+    @media screen and (min-width: $sm) {
+      @content;
+    }
+  }
+}

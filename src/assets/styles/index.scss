@@ -1,0 +1,9 @@
+@use './base/reset';
+@use './components/header.scss';
+
+@import './shared/colors.scss';
+
+body {
+  background-color: $background-dark;
+  color: $text-dark-primary;
+}
