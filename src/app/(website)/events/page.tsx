@@ -5,7 +5,7 @@ import Issue from '@/components/events/issue';
 import Workshop from '@/components/events/Workshop';
 import Schedule from '@/components/events/schedule';
 import Criterion from '@/components/events/Criterion';
-import guideline from '../guideline';
+import guideline from '@/app/guideline';
 import ContestResource from '@/components/events/ContestResource';
 
 import { createTheme, ThemeProvider, Typography, Box, CssBaseline } from '@mui/material';
