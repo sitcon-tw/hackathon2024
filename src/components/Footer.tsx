@@ -21,18 +21,18 @@ interface SocialMedia {
 
 export default function Footer() {
   const firstRow: SocialMedia[] = [
-    { Icon: FaFacebook, href: '#' },
-    { Icon: FaInstagram, href: '#' },
-    { Icon: FaXTwitter, href: '#' },
-    { Icon: FaTelegramPlane, href: '#' },
-    { Icon: SiPlurk, href: '#' }
+    { Icon: FaFacebook, href: 'https://sitcon.org/fb' },
+    { Icon: FaInstagram, href: 'https://sitcon.org/instagram' },
+    { Icon: FaXTwitter, href: 'https://sitcon.org/twitter' },
+    { Icon: FaTelegramPlane, href: 'https://sitcon.org/tg' },
+    { Icon: SiPlurk, href: 'https://sitcon.org/plurk' }
   ];
   const secondRow: SocialMedia[] = [
-    { Icon: FaDiscord, href: '#' },
-    { Icon: FaYoutube, href: '#' },
-    { Icon: FaFlickr, href: '#' },
-    { Icon: FaOdysee, href: '#' },
-    { Icon: FaMedium, href: '#' }
+    { Icon: FaDiscord, href: 'https://sitcon.org/discord' },
+    { Icon: FaYoutube, href: 'https://sitcon.org/yt' },
+    { Icon: FaFlickr, href: 'https://sitcon.org/flickr' },
+    { Icon: FaOdysee, href: 'https://sitcon.org/odysee' },
+    { Icon: FaMedium, href: 'https://sitcon.org/medium' }
   ];
 
   const socialMediaMapping = ({ Icon, href }: { Icon: IconType; href: string }, index: number) => (
