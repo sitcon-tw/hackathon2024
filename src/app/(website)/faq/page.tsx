@@ -1,17 +1,7 @@
 import { MdAdd, MdRemove } from 'react-icons/md';
+import qa from '@/data/json/faq.json';
 
 export default function FaqPage() {
-  const qa = [
-    {
-      question: '場地能過夜嗎？',
-      answer: '我們不提供場地過夜喔！建議大家可以住在鄰近的 XX 區、XX 區，才不會錯過第二天的活動！'
-    },
-    {
-      question: '我需要繳納多少報名費用？',
-      answer: '我們不提供場地過夜喔！建議大家可以住在鄰近的 XX 區、XX 區，才不會錯過第二天的活動！'
-    }
-  ];
-
   return (
     <main id="faq" className="container">
       <section>
