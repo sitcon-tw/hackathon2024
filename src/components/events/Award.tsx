@@ -6,8 +6,8 @@ import { Typography, Box, Grid } from "@mui/material";
 export default function Award() {
     return (
         <Box>
-            <Typography variant='h2' fontWeight='bold'>獎勵方法 </Typography>
-            <Typography variant='body1'>
+            <Typography variant='h2' fontWeight='bold' marginBottom='3rem'>獎勵方法 </Typography>
+            <Typography variant='body1' marginBottom='2rem'>
                 各個資源提供企業會在最後評選出兩個優秀團隊予以獎項。
             </Typography>
             <Grid container sx={{color: '#B7EFFF'}}>
