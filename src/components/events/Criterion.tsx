@@ -1,11 +1,11 @@
 'use client'
 
-import { Typography, Box } from "@mui/material"
+import { Typography, Box } from "@mui/material";
 
 export default function Criterion() {
     return (
-        <Box>
-            <Typography variant='h2' fontWeight='bold'>評分標準</Typography>
+        <Box marginBottom='2rem'>
+            <Typography variant='h2' fontWeight='bold' marginBottom='2rem'>評分標準</Typography>
             <Box component='ol'>
                 <Box component='li'>
                     <Typography variant='body1'>
@@ -29,5 +29,5 @@ export default function Criterion() {
                 </Box>
             </Box>
         </Box>
-    )
+    );
 }

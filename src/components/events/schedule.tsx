@@ -5,21 +5,20 @@ import { Typography, Box, Grid } from "@mui/material";
 import { Table, TableBody, TableRow, TableCell } from '@mui/material';
 
 // times must contain leading zero to ensure 2-digit hour
-const times = ['08:30', '09:00', '09:30', '12:00', '13:30', '15:00', '15:30', '16:00', '17:30', '18:00', '19:00', '21:30'];
-const codingText = 'Hacking Time';
+const times = ['08:30', '09:00', '09:30', '12:00', '13:00', '14:30', '15:00', '15:30', '16:00', '17:00', '18:00', '24:00'];
 const tableContent = [
     [['Day1\n7/6 (六)'], ['Day2\n7/7 (日)']],
-    [['報到'], [codingText, 3]],
+    [['參賽者報到'], ['Hacking Time / 企業擺攤', 3]],
     [['開幕']],
-    [[codingText]],
+    [['Hacking Time']],
     [['午餐'], ['午餐']],
-    [[codingText], ['企業 & 社群擺攤', 3]],
-    [['交流時間']],
-    [[codingText, 3]],
-    [['企業 Demo & 自由 Demo']],
+    [['Hacking Time', 3], ['Hacking Time / 企業擺攤']],
+    [['上傳作品 / 點心時間']],
+    [['Demo Time / 企業 & 社群擺攤', 3]],
+    [['點心時間']],
+    [['Hacking Time', 3]],
     [['閉幕']],
-    [['晚餐'], ['TODO', 2]],
-    [[codingText]]
+    [['TODO']],
 ];
 const headerHeight = '4rem';
 const rowHeight = (() => {
@@ -64,7 +63,7 @@ function generateTableRow(arr: (string | number)[][], idx: number) {
 
 export default function Schedule() {
     return (<Box>
-        <Typography variant='h2' fontWeight='bold'>時程表</Typography>
+        <Typography variant='h2' fontWeight='bold' sx={{marginBottom: '2rem'}}>時程表</Typography>
         <Box>
             <Table>
                 <TableBody>

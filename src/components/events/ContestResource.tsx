@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { Typography, Box, Card, Grid, Button, Dialog, DialogTitle, DialogContent, ListItem, List } from "@mui/material";
+import { Typography, Box, Card, Grid, Button, Dialog, DialogContent, ListItem, List } from "@mui/material";
 
 interface ResourceInfoProps {
     open: boolean,
@@ -66,7 +66,7 @@ function MyCard() {
 export default function ContestResource() {
     return (
         <Box>
-            <Typography variant='h2' fontWeight='bold'>企業資源</Typography>
+            <Typography variant='h2' fontWeight='bold' marginBottom='2rem'>企業資源</Typography>
             <Grid container justifyContent='center'>
                 <MyCard/>
                 <MyCard/>
