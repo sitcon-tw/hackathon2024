@@ -1,20 +1,20 @@
 'use client'
 
 import { ThemeProvider, Box } from '@mui/material';
-import { useTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import theme from './theme';
+import Header from '@/components/Header';
 import Timeline from '@/components/registration/timeline';
 import Rule from '@/components/registration/rule';
 import Notice from '@/components/registration/notice';
 
 
 export default function About() {
-    // const { spacing } = useTheme();
     return (
         <ThemeProvider theme={theme}>
             <CssBaseline />
-            <Box sx={{
+            <Header />
+            <Box style={{ position: 'relative' }} sx={{
               width: '100%',
               maxWidth: 1370,
               px: theme.spacing(2),
@@ -24,7 +24,7 @@ export default function About() {
               [theme.breakpoints.down('sm')]: { mt: theme.spacing(16) },
               [theme.breakpoints.down('xs')]: { mt: theme.spacing(14) }
             }}>
-              <h1>報名資訊</h1>
+              <h1 style={{ margin: '30px 0' }}>報名資訊</h1>
               <Timeline />
               <Rule />
               <Notice />
