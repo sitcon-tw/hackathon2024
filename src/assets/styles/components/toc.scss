@@ -1,0 +1,88 @@
+.toc-container {
+  @include toUp('md') {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 20px;
+    padding: 30px 40px;
+  }
+
+  max-width: 1280px;
+  margin: auto;
+  padding: 0 40px;
+}
+
+#toc {
+  font-family: Noto Sans TC;
+  color: $text-dark-secondary-disable;
+
+  input {
+    display: none;
+  }
+
+  label {
+    font-size: 24px;
+    font-weight: 700;
+    color: $text-dark-secondary;
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+    margin-top: 20px;
+  }
+
+  p {
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 400;
+    margin: 5px 0;
+  }
+
+  @include toUp('md') {
+    position: sticky;
+    top: 115px;
+    height: max-content;
+
+    p.active {
+      color: $text-dark-secondary;
+    }
+  }
+
+  @include toDown('sm') {
+    height: min-content;
+    margin-bottom: 25px;
+
+    label {
+      display: block;
+      padding: 12px 20px;
+      border-radius: 10px;
+      border: 1px solid $text-dark-secondary;
+    }
+
+    div {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: all 0.25s ease-out;
+      overflow: hidden;
+      margin: 0;
+    }
+
+    & > div {
+      padding: 0 20px;
+      border-radius: 0 0 10px 10px;
+      border: 0;
+    }
+
+    input:checked ~ label {
+      border-radius: 10px 10px 0 0;
+    }
+
+    input:checked ~ div {
+      grid-template-rows: 1fr;
+      border: 1px solid $text-dark-secondary;
+      border-top: 0;
+      padding: 10px 20px;
+    }
+  }
+}
