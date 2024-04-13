@@ -1,5 +1,5 @@
 import { Typography, Box } from '@mui/material';
-import Image from 'next/image';
+import { UnselectableImage } from '@/utils/commonComponent';
 
 const styles = {
   bodyFlexContainer: {
@@ -13,13 +13,6 @@ const styles = {
   }
 };
 
-function UnselectableImage<T extends { src: string; alt: string }>({ ...props }: T) {
-  return (
-    <Box sx={{ pointerEvents: 'none', userSelect: 'none' }}>
-      <Image {...props} />
-    </Box>
-  );
-}
 
 export default function TeamCard({ team, description }: { team: string; description: string }) {
   if (team === '財務組') {
