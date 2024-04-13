@@ -3,6 +3,7 @@ import Typography from '@mui/material/Typography';
 import Image from 'next/image';
 import Ellipse from '@/components/registration/ellipse';
 import WhiteButton from '@/components/home/white-button';
+import GradientButton from '@/components/home/gradient-button';
 
 export default function Home () {
   return (
@@ -68,6 +69,11 @@ export default function Home () {
             <Typography variant="body1" style={{ lineHeight: '200%' }}>SITCON 是個開放的社群，許多籌備的相關事項都會在公開的郵件論壇上進行討論，如果有興趣參與，歡迎訂閱 SITCON 的郵件論壇並貢獻你的想法，如果想成為明年年會或黑客松的籌備團隊，也可以填寫跳坑表單，我們會在明年活動開始籌備時通知你！</Typography>
             <Typography variant="body1" style={{ lineHeight: '200%' }}>若你想進一步了解 SITCON Hackathon 籌備與討論的內容，歡迎到 GitLab 上查看 SITCON Hackathon 2024 的籌備歷程。</Typography>
           </Box>
+        </Box>
+        <Box style={{ float: 'right', margin: '10px 15vw' }}>
+          <GradientButton text="預約跳坑表單" href="" />
+          <GradientButton text="郵件紀錄" href="" />
+          <GradientButton text="籌備紀錄" href="" />
         </Box>
     </main>
   )
