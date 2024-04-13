@@ -1,7 +1,9 @@
-@use './base/reset';
-@use './components/header.scss';
+@import './base';
+@import './components';
+@import './shared';
+@import './pages';
 
-@import './shared/colors.scss';
+@include reset();
 
 body {
   background-color: $background-dark;

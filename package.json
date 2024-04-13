@@ -4,9 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "pnpm run fetch:data && next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "fetch:data": "node src/scripts/fetchData"
   },
   "dependencies": {
     "@emotion/react": "^11.11.3",
@@ -28,6 +29,7 @@
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "dotenv": "^16.4.5",
     "eslint": "^8",
     "eslint-config-next": "14.1.0",
     "typescript": "^5"

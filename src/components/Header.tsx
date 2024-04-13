@@ -8,12 +8,12 @@ import clsx from 'clsx';
 export default function Header() {
   const toggle = useToggle(false);
   const options = [
-    { label: '黑客松活動', href: '#' },
-    { label: '報名資訊', href: '#' },
-    { label: '公開資訊', href: '#' },
-    { label: 'SITCON 團隊', href: '#' },
-    { label: '合作夥伴', href: '#' },
-    { label: '常見 FAQ', href: '#' },
+    { label: '黑客松活動', href: '/info' },
+    { label: '報名資訊', href: '/registration' },
+    { label: '公開資源', href: '/resources' },
+    { label: 'SITCON 團隊', href: '/about' },
+    { label: '合作夥伴', href: '/sponsor' },
+    { label: '常見 FAQ', href: '/faq' },
     { label: '成果存放平台', href: '#' }
   ];
 
@@ -22,7 +22,10 @@ export default function Header() {
       <Link className="caption" href="/">
         SITCON Hackathon
       </Link>
-      <AiOutlineMenu className="hamburger" onClick={() => toggle.on()} />
+      <div className="mobile-options">
+        <button className="btn-color">活動報名</button>
+        <AiOutlineMenu onClick={() => toggle.on()} />
+      </div>
       <nav id="nav" className={clsx({ active: toggle.isOpen })}>
         <AiOutlineClose className="close" onClick={toggle.off} />
         {options.map(({ href, label }) => (
