@@ -24,7 +24,7 @@ const theme = createTheme({
 });
 
 
-export default function About() {
+export default function Registration() {
     return (
       <ThemeProvider theme={theme}>
         <main id="registration" style={{ margin: '10px 5vw' }}>
