@@ -18,7 +18,7 @@ export default function GradientButton({ text, href }: GradientButtonProps) {
                     cursor: 'pointer',
                     width: '200px',
                     height: '80px',
-                    fontSize: 'x-large'
+                    fontSize: 'x-large',
                 }}
             >
                 {text}
