@@ -16,7 +16,7 @@ export default function Rule() {
             />
             <Box style={{ position: 'relative' }}>
                 <Ellipse bgColor="#2CACD166" />
-                <h2>報名規則</h2>
+                <Typography variant="h3">報名規則</Typography>
             </Box>
             <Box style={{ marginLeft: '10px' }}>
                 <Box>
