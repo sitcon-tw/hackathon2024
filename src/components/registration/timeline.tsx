@@ -5,7 +5,7 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import Ellipse from './ellipse';
 
 export default function Timeline() {
-    const isMobile = useMediaQuery('(max-width: 600px)');
+    const isMobile = useMediaQuery('(max-width: 768px)');
     return (
         <Box style={{ position: 'relative' }}>
             <Typography variant="h3">活動時程</Typography>
