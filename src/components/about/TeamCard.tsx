@@ -18,7 +18,7 @@ export default function TeamCard({ team, description }: { team: string; descript
   if (team === '財務組') {
     return (
       <Box sx={styles.bodyFlexContainer}>
-        <Typography variant="h3">{team}</Typography>
+        <Typography variant="h3" id={team}>{team}</Typography>
         <Box sx={styles.financialFlexContainer}>
           <Typography variant="body1">{description}</Typography>
           <UnselectableImage
@@ -39,7 +39,7 @@ export default function TeamCard({ team, description }: { team: string; descript
   }
   return (
     <Box sx={styles.bodyFlexContainer}>
-      <Typography variant="h3">{team}</Typography>
+      <Typography variant="h3" id={team}>{team}</Typography>
       <Typography variant="body1">{description}</Typography>
     </Box>
   );
