@@ -88,7 +88,7 @@ export default function SponsorPage() {
             </SponsorCard>
             <SponsorCard>
               <Typography variant='h3' fontWeight='bold' color='black'>財團法人開放文化基金會</Typography>
-              <Image src='/2024/images/sponsor/ocf 1.png' alt='OCF' width='406' height='240' style={{ marginTop: '11' }} />
+              <Image src='/2024/images/sponsor/ocf 1.png' alt='OCF' width='406' height='240' style={{ marginTop: '11px' }} />
               <Typography variant='body1' fontWeight='500' marginTop='13px' color='black'>
                 開放文化基金會成立於 2014 年，由多個開源社群及活動組織共同發起，希望協助台灣蓬勃的開放社群，進一步促進開放源碼、開放資料、開放硬體等自由精神，能更廣泛的於各領域中應用，同時也協助政府、企業及非政府組織更能了解開源軟體的優勢、開放資料的重要，進而推廣開放協作的文化。2015 年起我們除了支援本地社群主辦多場中大型活動，也和英國代表處、美國在台協會及世界銀行等單位共同舉辦各種主題講座，深耕台灣的開放文化並與國際交流。
               </Typography>
@@ -99,7 +99,8 @@ export default function SponsorPage() {
         <SponsorList type='協辦單位'>
           <SponsorCard>
             <Typography variant='h3' fontWeight='bold' color='black'>智慧創新跨域人才培育計畫</Typography>
-            <Typography variant='body1' fontWeight='500' color='black'>
+              <Image src='/2024/images/sponsor/ITSA_LOGO1 1.png' alt='ITSA' width='175' height='159' style={{ marginTop: '14px' }} />
+            <Typography variant='body1' fontWeight='500' marginTop='16px' color='black'>
               ITSA 為教育部智慧創新跨域人才培育計畫，協助進行數位人才之培育，聚焦於「智慧感知與互動體驗」、「大數據分析與資料科學」、「文化創意與多媒體」、「電商金融科技」四大類新興數位軟體之人才培育，以及以開源模式培養雲端運算系統軟體、嵌入式系統軟體及軟體工程人才，以補足我國各產業在相關數位應用人才需求之缺口，擴大國內各產業晉用數位軟體人才的來源。
             </Typography>
           </SponsorCard>
