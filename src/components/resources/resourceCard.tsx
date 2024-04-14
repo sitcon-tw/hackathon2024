@@ -1,26 +1,12 @@
 'use client'
 
-import Image from 'next/image'
 import { Box, Grid, Typography } from "@mui/material";
 import { Dispatch, SetStateAction, useState } from "react";
 import { FaCheck } from "react-icons/fa";
 import { UnselectableImage } from '@/utils/commonComponent';
-
-const govern = [
-    { name: '台北市資料大平台', description: '包含了各種與台北市相關的公開資料，如交通資料、文化資料、環境資料等。', url: '#' },
-    { name: '政府資料開放平臺', description: 'test test test', url: '#' },
-    { name: '行政院資料開放平台', description: 'test test test', url: '#' },
-    { name: '司法院資料開放平台', description: 'test test test', url: '#' },
-    { name: '立法院資料開放平台', description: 'test test test', url: '#' },
-    { name: '監察院資料開放平台', description: 'test test test', url: '#' },
-];
-const api = [
-    { name: '天氣 API', description: '提供世界各地的天氣紀錄', url: '#' },
-    { name: 'NASA', description: 'test test test', url: '#' },
-];
-const tool = [
-    { name: 'GitHub Student Developer Pack', description: 'GitHub 提供給學生的開發包、涵蓋各種開發工具和軟體。', url: '#' },
-];
+import govern from '@/data/json/govern.json';
+import api from '@/data/json/api.json';
+import tool from '@/data/json/tool.json';
 
 const buttonText = {
     fontWeight: '500',
