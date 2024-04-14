@@ -5,8 +5,8 @@ import { Typography, Box } from "@mui/material";
 export default function Criterion() {
     return (
         <Box marginBottom='2rem'>
-            <Typography variant='h2' fontWeight='bold' marginBottom='2rem'>評分標準</Typography>
-            <Box component='ol'>
+            <Typography variant='h2' fontWeight='bold' marginBottom='56px'>評分標準</Typography>
+            <Box component='ol' sx={{ listStyle: 'decimal', pl: 4 }}>
                 <Box component='li'>
                     <Typography variant='body1'>
                         各團隊專案將於競賽的第二天下午，依所使用工具的企業方進行 Demo，每間企業將評選出一組創意獎及一組技術獎。
