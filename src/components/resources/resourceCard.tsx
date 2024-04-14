@@ -58,7 +58,7 @@ function Card({ chosen, setChosen, data, title}: CardProps) {
                 <Grid item container gap='16px' direction='column' width='30%'>
                     { data.map(({ name }, index) => {
                         return (
-                            <div onClick={(e) => setChosen(index)} style={{ cursor: 'pointer' }}>
+                            <div key={index} onClick={(e) => setChosen(index)} style={{ cursor: 'pointer' }}>
                                 <Grid container key={index} direction='row' flexWrap='nowrap'>
                                     <Box>
                                         {index == chosen ? <FaCheck size='26px' /> : <Box width='26px' height='26px' />}
