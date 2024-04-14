@@ -129,8 +129,8 @@ export default function Issue() {
                 <Typography variant='h2' fontWeight='bold'>競賽議題</Typography>
             </WithGradient>
 
-            { data.map(({ title, src, description, subproblem }, idx) => <Box>
-                <Grid item container gap='94px' direction='row' justifyContent='space-between' key={idx}>
+            { data.map(({ title, src, description, subproblem }, idx) => <Box key={idx}>
+                <Grid item container gap='94px' direction='row' justifyContent='space-between'>
                     <Grid item container gap='32px' direction='column' xs={6.5}>
                         <Title word={title} src={src} />
                         <Typography variant='body1' whiteSpace='pre-line'>
@@ -145,7 +145,7 @@ export default function Issue() {
                             相關子議題
                         </Typography>
                         { subproblem.map(({ title: innerTitle, description: innerDescription }, innerIdx) => (
-                            <DropDown index={`${idx}-${innerIdx}`} question={innerTitle} answer={innerDescription} key={innerIdx} />
+                            <DropDown key={innerIdx} index={`${idx}-${innerIdx}`} question={innerTitle} answer={innerDescription} />
                         ))}
                     </Grid>
                 </Grid>
