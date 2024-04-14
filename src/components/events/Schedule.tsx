@@ -111,7 +111,7 @@ function generateTimeColumn() {
     return (
         <Grid item>
             {times.map((t, i) => (
-                <Grid height={`${rowHeight[i + 1]-rowHeight[i]}rem`}>
+                <Grid height={`${rowHeight[i + 1]-rowHeight[i]}rem`} key={i}>
                     <Grid container direction='column' sx={{ whiteSpace: 'pre-line'}} justifyContent='cneter' alignItems='center'>
                         <Typography variant='body1' fontWeight='bold' sx={{
                             marginTop: `calc(${rowHeight[i + 1]-rowHeight[i]}rem - 1rem)`,
@@ -153,7 +153,8 @@ export default function Schedule() {
         <UnselectableImage alt='' src='/2024/images/events/schedule.svg' width='1043' height='1112' style={{
             position: 'absolute',
             marginTop: '-250px',
-            marginLeft: '-100px'
+            marginLeft: '-100px',
+            zIndex: '-1'
         }} />
         <Box>
             <Grid container direction='row'>
