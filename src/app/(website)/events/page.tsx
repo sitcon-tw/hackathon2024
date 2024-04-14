@@ -1,14 +1,15 @@
 'use client'
 
 import Award from '@/components/events/Award';
-import Issue from '@/components/events/issue';
+import Issue from '@/components/events/Issue';
 import Workshop from '@/components/events/Workshop';
-import Schedule from '@/components/events/schedule';
+import Schedule from '@/components/events/Schedule';
 import Criterion from '@/components/events/Criterion';
 import guideline from '@/app/guideline';
 import ContestResource from '@/components/events/ContestResource';
 
 import { createTheme, ThemeProvider, Typography, Box, CssBaseline } from '@mui/material';
+import { WithGradient } from '@/utils/commonComponent';
 
 const theme = createTheme({
     typography: {
@@ -25,8 +26,14 @@ const theme = createTheme({
         h4: {
             fontSize: '24px'
         },
+        h5: {
+            fontSize: '20px'
+        },
         body1: {
             fontSize: '20px'
+        },
+        button: {
+            textTransform: 'none'
         }
     },
     palette: {
@@ -46,24 +53,13 @@ const styles = {
     },
 };
 
-function WithGradient<T extends { color: string, transparent?: string }>({ color, transparent = '66', ...props }: T) {
-    return <Box sx={{
-        width: '185px',
-        height: '185px',
-        background: `radial-gradient(closest-side, ${color}${transparent}, transparent)`,
-        position: 'absolute',
-        zIndex: -1,
-    }} {...props}/>
-}
-
 export default function Events() {
     return <ThemeProvider theme={theme}>
         <CssBaseline/>
         <Box sx={styles.flexContainer} width='80%' margin='auto'>
-            <Box sx={styles.flexInnerContainer}>
+            <WithGradient color={guideline.primary}>
                 <Typography variant='h1' fontWeight='bold'>黑客松活動</Typography>
-                <WithGradient color={guideline.primary} />
-            </Box>
+            </WithGradient>
             <Schedule/>
             <Issue/>
             <ContestResource/>

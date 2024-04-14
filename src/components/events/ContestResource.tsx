@@ -3,6 +3,8 @@
 import React from 'react';
 import Image from 'next/image';
 import { Typography, Box, Card, Grid, Button, Dialog, DialogContent, ListItem, List } from "@mui/material";
+import { WithGradient } from '@/utils/commonComponent';
+import guideline from '@/app/guideline';
 
 interface ResourceInfoProps {
     open: boolean,
@@ -39,23 +41,25 @@ function MyCard() {
     const handleClose = () => {
         setOpen(false);
     };
-    return (<Grid item textAlign='center' width='25%'>
+    return (<Grid item textAlign='center'>
         <Button onClick={handleClickOpen}>
             <Card sx={{borderRadius: '20px', border: '2px solid gray'}}>
-                <Typography variant='h4' fontWeight='bold'>
-                    Telegram
-                </Typography>
-                <p></p>
-                <Typography variant='h4' fontWeight='bold'>
-                    Telegram Bot<br/>
-                    聊天機器人
-                </Typography>
-                <p></p>
-                <Grid container justifyContent='flex-end' alignItems='center'>
-                    <Typography variant='body1' textAlign='right' fontSize={16}>
-                        詳細資訊
+                <Grid container gap='15px' direction='column' alignItems='center' padding='20px 30px'>
+                    <Typography variant='h4' fontWeight='bold'>
+                        Telegram
                     </Typography>
-                    <Image src="/2024/images/events/rightArrow.svg" alt="right arrow" width={15} height={15}/>
+                    <Typography variant='h4' fontWeight='bold'>
+                        Telegram Bot<br/>
+                        聊天機器人
+                    </Typography>
+                    <Grid item container direction='row' justifyContent='flex-end' alignItems='center' gap='3px'>
+                        <Typography variant='body1' textAlign='right' fontSize={16}>
+                            詳細資訊
+                        </Typography>
+                        <Image src="/2024/images/events/rightArrow.svg" alt="right arrow" width={15} height={15} style={{
+                            marginRight: '-10px'
+                        }}/>
+                    </Grid>
                 </Grid>
             </Card>
         </Button>
@@ -65,9 +69,11 @@ function MyCard() {
 
 export default function ContestResource() {
     return (
-        <Box>
-            <Typography variant='h2' fontWeight='bold' marginBottom='2rem'>企業資源</Typography>
-            <Grid container justifyContent='center'>
+        <Box marginTop='80px'>
+            <WithGradient color={guideline.color3}>
+                <Typography variant='h2' fontWeight='bold' marginBottom='2rem'>企業資源</Typography>
+            </WithGradient>
+            <Grid container justifyContent='space-between'>
                 <MyCard/>
                 <MyCard/>
                 <MyCard/>
