@@ -8,7 +8,7 @@ import clsx from 'clsx';
 export default function Header() {
   const toggle = useToggle(false);
   const options = [
-    { label: '黑客松活動', href: '/info' },
+    { label: '黑客松活動', href: '/events' },
     { label: '報名資訊', href: '/registration' },
     { label: '公開資源', href: '/resources' },
     { label: 'SITCON 團隊', href: '/about' },
