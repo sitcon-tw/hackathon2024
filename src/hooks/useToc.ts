@@ -13,11 +13,13 @@ export function useToc() {
   useEffect(() => {
     const elements = Array.from(document.querySelectorAll('h1, h2, h3'));
     setHeading(
-      elements.map((elem: Element) => ({
-        id: elem.id,
-        text: elem.innerHTML,
-        level: Number(elem.nodeName.charAt(1))
-      }))
+      elements
+        .map((elem: Element) => ({
+          id: elem.id,
+          text: elem.innerHTML,
+          level: Number(elem.nodeName.charAt(1))
+        }))
+        .filter(({ id }) => id)
     );
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
