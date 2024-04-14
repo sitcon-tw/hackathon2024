@@ -50,7 +50,7 @@ function Card({ chosen, setChosen, data, title}: CardProps) {
     return (
         <Grid container gap='56px' direction='column' marginTop='97px'>
             <Grid item>
-                <Typography variant='h2' fontWeight='bold'>
+                <Typography variant='h2' fontWeight='bold' id={title}>
                     {title}
                 </Typography>
             </Grid>

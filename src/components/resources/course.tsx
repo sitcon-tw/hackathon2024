@@ -15,7 +15,7 @@ export default function Course() {
     return (
         <Grid container gap='56px' direction='column'>
             <Grid item>
-                <Typography variant='h2' fontWeight='bold'>
+                <Typography id="course" variant='h2' fontWeight='bold'>
                     線上課程
                 </Typography>
             </Grid>

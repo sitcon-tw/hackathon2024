@@ -1,6 +1,7 @@
 'use client'
 import Course from "@/components/resources/course";
 import ResourceCard from "@/components/resources/resourceCard";
+import { TocContainer } from "@/components/TOC";
 import { createTheme, Grid, ThemeProvider, Typography } from "@mui/material";
 
 const theme = createTheme({
@@ -33,17 +34,19 @@ const theme = createTheme({
 export default function Resources() {
     return (
         <ThemeProvider theme={theme}>
-            <Grid container gap='72px' width='80%' margin='auto' direction='column'>
-                <Grid item>
-                    <Typography variant='h1' fontWeight='bold'>
-                        公開資源
-                    </Typography>
+            <TocContainer>
+                <Grid container gap='72px' width='80%' margin='auto' direction='column'>
+                    <Grid item>
+                        <Typography id="resource" variant='h1' fontWeight='bold'>
+                            公開資源
+                        </Typography>
+                    </Grid>
+                    <Grid item>
+                        <Course />
+                        <ResourceCard />
+                    </Grid>
                 </Grid>
-                <Grid item>
-                    <Course />
-                    <ResourceCard />
-                </Grid>
-            </Grid>
+            </TocContainer>
         </ThemeProvider>
     );
 }
