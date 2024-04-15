@@ -126,15 +126,15 @@ function generateTimeColumn() {
     );
 }
 
-function getCell(content: string | number) {
+function GetCell({ content}: { content: string | number }) {
+    const [open, setOpen] = React.useState(false);
+    const handleClickOpen = () => {
+        setOpen(true);
+    };
+    const handleClose = () => {
+        setOpen(false);
+    };
     if (content === 'Demo Time / 企業 & 社群擺攤') {
-        const [open, setOpen] = React.useState(false);
-        const handleClickOpen = () => {
-            setOpen(true);
-        };
-        const handleClose = () => {
-            setOpen(false);
-        };
         return (<>
             <Button onClick={handleClickOpen}>
                 <Grid direction='column' item container sx={{
@@ -180,7 +180,7 @@ function generateTableColumn(arr: (string | number)[][], idx: number) {
                     direction='column'
                     justifyContent='center'
                 >
-                    {getCell(content[0])}
+                    <GetCell content={content[0]} />
                 </Grid>)
             )}
         </Grid>

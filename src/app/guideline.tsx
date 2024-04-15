@@ -1,6 +1,6 @@
 import { createTheme } from "@mui/material";
 
-export default {
+const colors = {
   primary: '#73BB3A',
   secondary: '#35EB93',
   color1: '#3D3393',
@@ -12,6 +12,7 @@ export default {
   white: '#FFFFFF',
   gray: '#EFEFEF'
 };
+export default colors;
 
 export const theme = createTheme({
   typography: {

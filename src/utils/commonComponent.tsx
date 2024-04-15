@@ -6,10 +6,10 @@ interface ImageProps  {
   alt: string,
   [otherOptions: string]: unknown,
 }
-export function UnselectableImage({ ...props }: ImageProps) {
+export function UnselectableImage({ alt, ...props }: ImageProps) {
   return (
     <Box sx={{ pointerEvents: 'none', userSelect: 'none' }}>
-      <Image {...props} />
+      <Image alt={alt} {...props} />
     </Box>
   );
 }
