@@ -4,28 +4,7 @@ import Typography from '@mui/material/Typography';
 import Image from 'next/image';
 import Ellipse from '@/components/registration/ellipse';
 import WhiteButton from '@/components/home/white-button';
-import GradientButton from '@/components/home/gradient-button';
-
-const theme = createTheme({
-  typography: {
-    fontFamily: 'Noto Sans TC',
-    h1: {
-      fontSize: '48px'
-    },
-    h2: {
-      fontSize: '36px'
-    },
-    h3: {
-      fontSize: '30px'
-    },
-    h4: {
-      fontSize: '24px'
-    },
-    body1: {
-      fontSize: '20px'
-    },
-  }
-});
+import { theme } from '../guideline';
 
 export default function Home () {
   return (

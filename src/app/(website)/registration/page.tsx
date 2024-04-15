@@ -7,22 +7,7 @@ import Typography from '@mui/material/Typography';
 import Timeline from '@/components/registration/timeline';
 import Rule from '@/components/registration/rule';
 import Notice from '@/components/registration/notice';
-
-const theme = createTheme({
-  typography: {
-    fontFamily: 'Noto Sans TC',
-    h1: {
-      fontSize: '48px'
-    },
-    h3: {
-      fontSize: '30px'
-    },
-    body1: {
-      fontSize: '20px'
-    }
-  }
-});
-
+import { theme } from '@/app/guideline';
 
 export default function Registration() {
     return (

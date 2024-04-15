@@ -1,32 +1,9 @@
 'use client'
 import Image from 'next/image';
-import { createTheme, ThemeProvider, Typography, Box, CssBaseline, Button, Grid } from '@mui/material';
+import { ThemeProvider, Typography, Box, CssBaseline, Button, Grid } from '@mui/material';
 import { TocContainer } from '@/components/TOC';
 import SponsorCard from '@/components/sponsor/SponsorCard';
-
-const theme = createTheme({
-  typography: {
-    fontFamily: 'Noto Sans TC',
-    h1: {
-      fontSize: '48px'
-    },
-    h2: {
-      fontSize: '36px'
-    },
-    h3: {
-      fontSize: '30px'
-    },
-    h4: {
-      fontSize: '24px'
-    },
-    body1: {
-      fontSize: '20px'
-    },
-  },
-  palette: {
-    mode: 'dark'
-  }
-});
+import { theme } from '@/app/guideline';
 
 const styles = {
   button: {
