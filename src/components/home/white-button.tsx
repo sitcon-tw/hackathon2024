@@ -1,3 +1,5 @@
+import { Link, Typography } from "@mui/material";
+
 type WhiteButtonProps = {
     text: string;
     href: string;
@@ -5,10 +7,18 @@ type WhiteButtonProps = {
 
 export default function WhiteButton({ text, href }: WhiteButtonProps) {
     return (
-        <a href={href} style={{ textDecoration: 'none', cursor: 'pointer', margin: '0 10px' }}>
-            <button style={{ backgroundColor: '#FFFFFF33', borderRadius: '40px', width: '180px', height: '80px', fontSize: 'x-large', color: 'white' }}>
-                {text}
+        <Link href={href}>
+            <button style={{ 
+                borderRadius: '50px',
+                border: '1px solid rgba(210, 210, 210, 1)',
+                background: 'rgba(255, 255, 255, 0.2)',
+                padding: '25px 40px',
+                cursor: 'pointer',
+            }}>
+                <Typography variant='h3' fontWeight='bold' color='white'>
+                    {text}
+                </Typography>
             </button>
-        </a>
+        </Link>
     );
 }
