@@ -2,37 +2,10 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { Typography, Box, Card, Grid, Button, Dialog, DialogContent, ListItem, List } from "@mui/material";
-import { WithGradient } from '@/utils/commonComponent';
+import { Typography, Box, Card, Grid, Button, Dialog, DialogContent, ListItem, List, Paper, PaperProps } from "@mui/material";
+import { RainbowDialog, WithGradient } from '@/utils/commonComponent';
 import guideline from '@/app/guideline';
 
-interface ResourceInfoProps {
-    open: boolean,
-    onClose: (value: string) => void
-}
-function ResourceInfo({ onClose, open }: ResourceInfoProps) {
-    return (
-        <Dialog onClose={onClose} open={open}>
-            <Box textAlign='center'>
-                <p/>
-                <Typography variant='h2' fontWeight='bold'>Telegram</Typography>
-                <p/>
-                <Typography variant='h2' fontWeight='bold'>Telegram Bot 聊天機器人</Typography>
-            </Box>
-            <DialogContent>
-                <Typography variant='h3' fontWeight='bold'>資源說明</Typography>
-                <p/>
-                <Typography variant='body1'>是一種在 Telegram 平台幫助你執行各種功能的應用。 它們提供靈活的互動介面，為用戶完成各種任務或提供服務</Typography>
-                <p/>
-                <Typography variant='h3' fontWeight='bold'>相關資料</Typography>
-                <List>
-                    <ListItem><Typography variant='body1'>Telegram Bot API</Typography></ListItem>
-                    <ListItem><Typography variant='body1'>Telegram Bot Father</Typography></ListItem>
-                </List>
-            </DialogContent>
-        </Dialog>
-    );
-}
 function MyCard() {
     const [ open, setOpen ] = React.useState(false);
     const handleClickOpen = () => {
@@ -42,8 +15,14 @@ function MyCard() {
         setOpen(false);
     };
     return (<Grid item textAlign='center'>
-        <Button onClick={handleClickOpen}>
-            <Card sx={{borderRadius: '20px', border: '2px solid gray'}}>
+        <Button onClick={handleClickOpen} sx={{
+
+        }}>
+            <Card sx={{
+                borderRadius: '20px',
+                border: '2px solid rgba(255, 255, 255, 0.5)',
+                background: 'rgba(255, 255, 255, 0.08)',
+            }}>
                 <Grid container gap='15px' direction='column' alignItems='center' padding='20px 30px'>
                     <Typography variant='h4' fontWeight='bold'>
                         Telegram
@@ -63,8 +42,23 @@ function MyCard() {
                 </Grid>
             </Card>
         </Button>
-        <ResourceInfo open={open} onClose={handleClose}/>
-    </Grid>)
+        <RainbowDialog open={open} onClose={handleClose}>
+            <Box textAlign='center'>
+                <Typography variant='h2' fontWeight='bold'>Telegram</Typography>
+                <Typography variant='h2' fontWeight='bold'>Telegram Bot 聊天機器人</Typography>
+            </Box>
+            <DialogContent>
+                <Typography variant='h3' fontWeight='bold'>資源說明</Typography>
+                <Typography variant='body1' marginTop='24px'>是一種在 Telegram 平台幫助你執行各種功能的應用。 它們提供靈活的互動介面，為用戶完成各種任務或提供服務</Typography>
+
+                <Typography variant='h3' fontWeight='bold' marginTop='36px'>相關資料</Typography>
+                <Box marginTop='24px' component='ol' sx={{ listStyle: 'disc', pl: 4, color: 'rgba(255, 253, 196, 1)' }}>
+                    <Box component='li'><a href='https://core.telegram.org/bots/api'><Typography variant='body1' sx={{ textDecoration: 'underline' }}>Telegram Bot API</Typography></a></Box>
+                    <Box component='li'><a href='https://telegram.me/BotFather'><Typography variant='body1' sx={{ textDecoration: 'underline' }}>Telegram Bot Father</Typography></a></Box>
+                </Box>
+            </DialogContent>
+        </RainbowDialog>
+    </Grid>);
 }
 
 export default function ContestResource() {

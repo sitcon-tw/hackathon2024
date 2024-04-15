@@ -1,8 +1,11 @@
 'use client'
 
-import { UnselectableImage } from '@/utils/commonComponent';
+import { RainbowDialog, UnselectableImage } from '@/utils/commonComponent';
 import './Schedule.css';
-import { Typography, Box, Grid } from "@mui/material";
+import { Typography, Box, Grid, Button, Card, DialogContent } from "@mui/material";
+import React from 'react';
+import { CiCircleInfo } from "react-icons/ci";
+import { FaInfoCircle } from 'react-icons/fa';
 
 // times must contain leading zero to ensure 2-digit hour
 const times = ['08:30', '09:00', '09:30', '12:00', '13:00', '14:00', '14:30', '15:30', '16:00', '17:00', '18:00'];
@@ -32,7 +35,7 @@ function transpose<T>(matrix: T[][]) {
 const headerHeight = 4;
 const rowHeight = (() => {
     const ret: number[] = [0, headerHeight];
-    const coefficient = 2;
+    const coefficient = 1.4;
     let prefixSum = headerHeight;
     for (let i = 1; i < times.length; i++) {
         const latter = Date.parse('1970-01-01T' + times[i] + 'Z');
@@ -124,6 +127,46 @@ function generateTimeColumn() {
     );
 }
 
+function getCell(content: string | number) {
+    if (content === 'Demo Time / 企業 & 社群擺攤') {
+        const [open, setOpen] = React.useState(false);
+        const handleClickOpen = () => {
+            setOpen(true);
+        };
+        const handleClose = () => {
+            setOpen(false);
+        };
+        return (<>
+            <Button onClick={handleClickOpen}>
+                <Grid direction='column' item container sx={{
+                    whiteSpace: 'preline'
+                }}>
+                    <Typography variant='body1' color='white' fontWeight='bold' sx={{ textAlign: 'center' }}>{content}</Typography>
+                    <Grid item alignSelf='flex-end'>
+                        <FaInfoCircle width='17px' height='17px' color='white' />
+                    </Grid>
+                </Grid>
+            </Button>
+            <RainbowDialog open={open} onClose={handleClose}>
+                <Box textAlign='center'>
+                    <Typography variant='h2' fontWeight='bold'>Demo Time / 企業 & 社群擺攤</Typography>
+                </Box>
+                <DialogContent>
+                    <Typography variant='h3' fontWeight='bold' marginTop='36px'>Demo Time</Typography>
+                    <Typography variant='body1' marginTop='18px'>團隊向企業進行成果 Demo 的時間，也提供交流區讓有興趣的團隊向更多人分享專案，與競賽團隊、社群及企業一同交流。</Typography>
+
+                    <Typography variant='h3' fontWeight='bold' marginTop='24px'>企業 & 社群擺攤</Typography>
+                    <Typography variant='body1' marginTop='18px'>由社群和企業展示其領域的專業知識和成果，讓參與者可以實際的深入了解不同社群所擅長的技術，也可以了解企業的產品及研究。當中也有互動和闖關可以讓社群成員和參與者討論不一樣的觀點和經驗，與企業彼此互相交流，了解目前的趨勢及動態。</Typography>
+                </DialogContent>
+            </RainbowDialog>
+        </>);
+    }
+    return (
+        <Grid sx={{whiteSpace: 'preline'}} item>
+            <Typography variant='body1' fontWeight='bold' sx={{ textAlign: 'center' }}>{content}</Typography>
+        </Grid>
+    );
+}
 function generateTableColumn(arr: (string | number)[][], idx: number) {
     return (
         <Grid item container direction='column' width='45%' key={idx}>
@@ -138,9 +181,7 @@ function generateTableColumn(arr: (string | number)[][], idx: number) {
                     direction='column'
                     justifyContent='center'
                 >
-                    <Grid sx={{whiteSpace: 'pre-line'}} item>
-                        <Typography variant='body1' fontWeight='bold' sx={{ textAlign: 'center' }}>{content[0]}</Typography>
-                    </Grid>
+                    {getCell(content[0])}
                 </Grid>)
             )}
         </Grid>
@@ -157,7 +198,7 @@ export default function Schedule() {
             zIndex: '-1'
         }} />
         <Box>
-            <Grid container direction='row'>
+            <Grid container direction='row' flexWrap='nowrap'>
                 <Grid item>
                     {generateTimeColumn()}
                 </Grid>
