@@ -1,3 +1,4 @@
+'use client'
 import { IconType } from 'react-icons';
 import {
   FaFacebook,
@@ -13,6 +14,9 @@ import { FaTelegramPlane } from 'react-icons/fa';
 import { SiPlurk } from 'react-icons/si';
 import footerBackgrond from '@/assets/images/SITCON HACKATHON.svg';
 import Image from 'next/image';
+import { ThemeProvider } from '@emotion/react';
+import { theme } from '@/app/guideline';
+import { CssBaseline, Typography } from '@mui/material';
 
 interface SocialMedia {
   Icon: IconType;
@@ -42,22 +46,31 @@ export default function Footer() {
   );
 
   return (
-    <footer id="footer">
-      <article className="container">
-        <section className="SITCON">
-          <span>學生計算機年會</span>
-          <span>Students&apos; Information Technology Conference</span>
-        </section>
-        <section className="contact">
-          <span>合作聯繫</span>
-          <a href="mailto:contact@sitcon.org">contact@sitcon.org</a>
-        </section>
-        <section className="social">{firstRow.map(socialMediaMapping)}</section>
-        <section className="social">{secondRow.map(socialMediaMapping)}</section>
-      </article>
-      <div className="bg">
-        <Image src={footerBackgrond} alt="footer-background" />
-      </div>
-    </footer>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <footer id="footer">
+        <article className="container">
+          <section className="SITCON">
+            <Typography variant='h5' fontWeight='bold'>學生計算機年會</Typography>
+            <Typography variant='h5' fontWeight='bold'>Students&apos; Information Technology Conference</Typography>
+          </section>
+          <section className="contact">
+            <Typography variant='h5' fontWeight='bold'>
+              合作聯繫
+            </Typography>
+            <a href="mailto:contact@sitcon.org">
+              <Typography variant='h5' fontWeight='bold'>
+                contact@sitcon.org
+              </Typography>
+            </a>
+          </section>
+          <section className="social">{firstRow.map(socialMediaMapping)}</section>
+          <section className="social">{secondRow.map(socialMediaMapping)}</section>
+        </article>
+        <div className="bg">
+          <Image src={footerBackgrond} alt="footer-background" />
+        </div>
+      </footer>
+    </ThemeProvider>
   );
 }
