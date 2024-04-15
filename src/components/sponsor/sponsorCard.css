@@ -6,4 +6,5 @@
         linear-gradient(90deg, rgba(239, 239, 239, 1), rgba(239, 239, 239, 1)) padding-box,
         linear-gradient(90deg, rgba(61, 51, 147, 0.6) 0%, rgba(43, 118, 185, 0.6) 31.5%, rgba(44, 172, 209, 0.6) 58%, rgba(53, 235, 147, 0.6) 81%, rgba(115, 187, 58, 0.6) 100%) border-box;
     padding: 25px 15px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
