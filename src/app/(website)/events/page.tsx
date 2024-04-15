@@ -10,6 +10,7 @@ import ContestResource from '@/components/events/ContestResource';
 
 import { ThemeProvider, Typography, Box, CssBaseline } from '@mui/material';
 import { WithGradient } from '@/utils/commonComponent';
+import { TocContainer } from '@/components/TOC';
 
 const styles = {
     flexContainer: {
@@ -26,16 +27,18 @@ const styles = {
 export default function Events() {
     return <ThemeProvider theme={theme}>
         <CssBaseline/>
-        <Box sx={styles.flexContainer} width='80%' margin='auto'>
-            <WithGradient color={guideline.primary}>
-                <Typography variant='h1' fontWeight='bold'>黑客松活動</Typography>
-            </WithGradient>
-            <Schedule/>
-            <Issue/>
-            <ContestResource/>
-            <Workshop/>
-            <Criterion/>
-            <Award/>
-        </Box>
+        <TocContainer>
+            <Box sx={styles.flexContainer}>
+                <WithGradient color={guideline.primary}>
+                    <Typography variant='h1' fontWeight='bold'>黑客松活動</Typography>
+                </WithGradient>
+                <Schedule/>
+                <Issue/>
+                <ContestResource/>
+                <Workshop/>
+                <Criterion/>
+                <Award/>
+            </Box>
+        </TocContainer>
     </ThemeProvider>
 }

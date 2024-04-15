@@ -12,7 +12,6 @@ const styles = {
     display: 'flex',
     gap: '72px',
     flexDirection: 'column',
-    padding: '20px 50px 20px 180px'
   },
   titleFlexContainer: {
     display: 'flex',
@@ -29,7 +28,7 @@ export default function About() {
         <Box className="container" sx={styles.flexContainer}>
           <Box sx={styles.titleFlexContainer}>
             <WithGradient color={guideline.color3} transparent='80'>
-                <Typography variant="h1" fontWeight="bold">
+                <Typography variant="h1" fontWeight="bold" id='team'>
                 SITCON 團隊
                 </Typography>
             </WithGradient>

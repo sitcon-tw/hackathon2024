@@ -126,7 +126,7 @@ export default function Issue() {
     return (
         <Grid container gap='60px' marginTop='60px'>
             <WithGradient color={guideline.primary}>
-                <Typography variant='h2' fontWeight='bold'>競賽議題</Typography>
+                <Typography id='issue' variant='h2' fontWeight='bold'>競賽議題</Typography>
             </WithGradient>
 
             { data.map(({ title, src, description, subproblem }, idx) => <Box key={idx}>

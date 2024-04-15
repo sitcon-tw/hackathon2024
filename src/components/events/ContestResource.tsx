@@ -65,7 +65,7 @@ export default function ContestResource() {
     return (
         <Box marginTop='80px'>
             <WithGradient color={guideline.color3}>
-                <Typography variant='h2' fontWeight='bold' marginBottom='2rem'>企業資源</Typography>
+                <Typography id='contest-resource' variant='h2' fontWeight='bold' marginBottom='2rem'>企業資源</Typography>
             </WithGradient>
             <Grid container justifyContent='space-between'>
                 <MyCard/>

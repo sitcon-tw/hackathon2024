@@ -9,7 +9,7 @@ export default function Award() {
     return (
         <Box marginTop='70px'>
             <WithGradient color={guideline.secondary} transparent='4D'>
-                <Typography variant='h2' fontWeight='bold' marginBottom='56px'>獎勵方法 </Typography>
+                <Typography id='award' variant='h2' fontWeight='bold' marginBottom='56px'>獎勵方法 </Typography>
             </WithGradient>
             <Typography variant='body1' marginBottom='48px'>
                 各個資源提供企業會在最後評選出兩個優秀團隊予以獎項，共 8 組獎項，總獎金 3.2 萬。

@@ -10,9 +10,9 @@ export default function Resources() {
         <ThemeProvider theme={theme}>
             <CssBaseline />
             <TocContainer>
-                <Grid container gap='72px' width='80%' margin='auto' direction='column'>
+                <Grid container gap='72px' direction='column'>
                     <Grid item>
-                        <Typography id="resource" variant='h1' fontWeight='bold'>
+                        <Typography variant='h1' fontWeight='bold'>
                             公開資源
                         </Typography>
                     </Grid>

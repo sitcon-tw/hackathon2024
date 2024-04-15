@@ -5,7 +5,7 @@ import Ellipse from './ellipse';
 export default function Notice() {
     return (
         <Box style={{ position: 'relative' }} marginTop='15vh'>
-            <Typography variant="h3" fontWeight='bold' marginBottom='8vh'>注意事項</Typography>
+            <Typography id='notice' variant="h3" fontWeight='bold' marginBottom='8vh'>注意事項</Typography>
             <Ellipse bgColor="#3D339380" />
             <Box component='ol' sx={{ listStyle: 'decimal', pl: 4 }}>
                 <Box component='li'>

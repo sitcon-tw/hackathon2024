@@ -27,7 +27,7 @@ export default function SponsorPage() {
   return (<ThemeProvider theme={theme}>
     <CssBaseline />
     <TocContainer>
-      <Grid container direction='column' gap='120px' width='80%' margin='auto'>
+      <Grid container direction='column' gap='120px'>
         <Grid item container direction='column'>
           <Typography variant='h1' fontWeight='bold' id="sup">支持我們</Typography>
           <Typography variant='body1' marginTop='56px' marginBottom='48px'>

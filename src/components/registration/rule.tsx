@@ -16,7 +16,7 @@ export default function Rule() {
             />
             <Box style={{ position: 'relative' }}>
                 <Ellipse bgColor="#2CACD166" />
-                <Typography variant="h2" fontWeight='bold'>報名規則</Typography>
+                <Typography id='rule' variant="h2" fontWeight='bold'>報名規則</Typography>
             </Box>
 
             <Grid direction='column' container gap='10vh' style={{ marginLeft: '10px', marginTop: '10vh' }}>
@@ -25,7 +25,7 @@ export default function Rule() {
                         <MdPersonAddAlt1 size={40} />
                     </Grid>
                     <Grid item marginLeft='1vw'>
-                        <Typography variant='h3' fontWeight='bold'>
+                        <Typography id='limitation' variant='h3' fontWeight='bold'>
                             參賽資格
                         </Typography>
                         <Typography variant='body1' marginTop='2vh'>全國各級高中職、大專院校在學學生</Typography>
@@ -37,7 +37,7 @@ export default function Rule() {
                             <RiMoneyDollarCircleFill size={40} />
                     </Grid>
                     <Grid item marginLeft='1vw'>
-                        <Typography variant='h3' fontWeight='bold' marginBottom='3vh'>
+                        <Typography id='fee' variant='h3' fontWeight='bold' marginBottom='3vh'>
                             報名費用
                         </Typography>
                         <Grid container gap='5vh' direction='column'>
@@ -66,7 +66,7 @@ export default function Rule() {
                             <RiTeamFill size={40} />
                     </Grid>
                     <Grid item marginLeft='1vw'>
-                        <Typography variant='h3' fontWeight='bold' marginBottom='3vh'>
+                        <Typography id='team-rule' variant='h3' fontWeight='bold' marginBottom='3vh'>
                             組隊規定
                         </Typography>
                         <Grid container gap='5vh' direction='column'>

@@ -9,19 +9,22 @@ import Rule from '@/components/registration/rule';
 import Notice from '@/components/registration/notice';
 import { theme } from '@/app/guideline';
 import { CssBaseline } from '@mui/material';
+import { TocContainer } from '@/components/TOC';
 
 export default function Registration() {
     return (
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <main id="registration" style={{ margin: '10px 5vw' }}>
-            <Box style={{ position: 'relative' }}>
-              <Typography variant="h1" fontWeight='bold' style={{ margin: '30px 0' }}>報名資訊</Typography>
-              <Timeline />
-              <Rule />
-              <Notice />
-            </Box>
-        </main>
+        <TocContainer>
+          <main id="registration">
+              <Box style={{ position: 'relative' }}>
+                <Typography variant="h1" fontWeight='bold'>報名資訊</Typography>
+                <Timeline />
+                <Rule />
+                <Notice />
+              </Box>
+          </main>
+        </TocContainer>
       </ThemeProvider>
     )
 }

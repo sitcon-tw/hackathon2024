@@ -190,7 +190,7 @@ function generateTableColumn(arr: (string | number)[][], idx: number) {
 
 export default function Schedule() {
     return (<Box>
-        <Typography variant='h2' fontWeight='bold' sx={{marginBottom: '56px'}}>時程表</Typography>
+        <Typography id='schedule' variant='h2' fontWeight='bold' sx={{marginBottom: '56px'}}>時程表</Typography>
         <UnselectableImage alt='' src='/2024/images/events/schedule.svg' width='1043' height='1112' style={{
             position: 'absolute',
             marginTop: '-250px',
