@@ -4,7 +4,6 @@ import { RainbowDialog, UnselectableImage } from '@/utils/commonComponent';
 import './Schedule.css';
 import { Typography, Box, Grid, Button, Card, DialogContent } from "@mui/material";
 import React from 'react';
-import { CiCircleInfo } from "react-icons/ci";
 import { FaInfoCircle } from 'react-icons/fa';
 
 // times must contain leading zero to ensure 2-digit hour
@@ -118,7 +117,7 @@ function generateTimeColumn() {
                     <Grid container direction='column' sx={{ whiteSpace: 'pre-line'}} justifyContent='cneter' alignItems='center'>
                         <Typography variant='body1' fontWeight='bold' sx={{
                             marginTop: `calc(${rowHeight[i + 1]-rowHeight[i]}rem - 1rem)`,
-                            marginRight: '20px'
+                            marginRight: '2vw'
                         }}>{t.replace(/^0+/, '')}</Typography>
                     </Grid>
                 </Grid>
@@ -152,11 +151,11 @@ function getCell(content: string | number) {
                     <Typography variant='h2' fontWeight='bold'>Demo Time / 企業 & 社群擺攤</Typography>
                 </Box>
                 <DialogContent>
-                    <Typography variant='h3' fontWeight='bold' marginTop='36px'>Demo Time</Typography>
-                    <Typography variant='body1' marginTop='18px'>團隊向企業進行成果 Demo 的時間，也提供交流區讓有興趣的團隊向更多人分享專案，與競賽團隊、社群及企業一同交流。</Typography>
+                    <Typography variant='h3' fontWeight='bold' marginTop='6vh'>Demo Time</Typography>
+                    <Typography variant='body1' marginTop='3vh'>團隊向企業進行成果 Demo 的時間，也提供交流區讓有興趣的團隊向更多人分享專案，與競賽團隊、社群及企業一同交流。</Typography>
 
-                    <Typography variant='h3' fontWeight='bold' marginTop='24px'>企業 & 社群擺攤</Typography>
-                    <Typography variant='body1' marginTop='18px'>由社群和企業展示其領域的專業知識和成果，讓參與者可以實際的深入了解不同社群所擅長的技術，也可以了解企業的產品及研究。當中也有互動和闖關可以讓社群成員和參與者討論不一樣的觀點和經驗，與企業彼此互相交流，了解目前的趨勢及動態。</Typography>
+                    <Typography variant='h3' fontWeight='bold' marginTop='4vh'>企業 & 社群擺攤</Typography>
+                    <Typography variant='body1' marginTop='3vh'>由社群和企業展示其領域的專業知識和成果，讓參與者可以實際的深入了解不同社群所擅長的技術，也可以了解企業的產品及研究。當中也有互動和闖關可以讓社群成員和參與者討論不一樣的觀點和經驗，與企業彼此互相交流，了解目前的趨勢及動態。</Typography>
                 </DialogContent>
             </RainbowDialog>
         </>);
@@ -190,11 +189,11 @@ function generateTableColumn(arr: (string | number)[][], idx: number) {
 
 export default function Schedule() {
     return (<Box>
-        <Typography id='schedule' variant='h2' fontWeight='bold' sx={{marginBottom: '56px'}}>時程表</Typography>
+        <Typography id='schedule' variant='h2' fontWeight='bold' sx={{marginBottom: '9vh'}}>時程表</Typography>
         <UnselectableImage alt='' src='/2024/images/events/schedule.svg' width='1043' height='1112' style={{
             position: 'absolute',
-            marginTop: '-250px',
-            marginLeft: '-100px',
+            marginTop: '-40vh',
+            marginLeft: '-10vw',
             zIndex: '-1'
         }} />
         <Box>

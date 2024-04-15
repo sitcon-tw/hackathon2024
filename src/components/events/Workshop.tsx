@@ -6,7 +6,7 @@ import { Typography, Box, Grid } from "@mui/material"
 
 export default function Workshop() {
     return (
-        <Grid container gap='56px' direction='column' marginTop='80px'>
+        <Grid container gap='9vh' direction='column' marginTop='13vh'>
             <WithGradient color={guideline.color2}>
                 <Typography id='workshop' variant='h2' fontWeight='bold'>賽前工作坊</Typography>
             </WithGradient>

@@ -4,8 +4,8 @@ import { Typography, Box } from "@mui/material";
 
 export default function Criterion() {
     return (
-        <Box marginBottom='2rem'>
-            <Typography id='criterion' variant='h2' fontWeight='bold' marginBottom='56px'>評分標準</Typography>
+        <Box marginBottom='5vh'>
+            <Typography id='criterion' variant='h2' fontWeight='bold' marginBottom='9vh'>評分標準</Typography>
             <Box component='ol' sx={{ listStyle: 'decimal', pl: 4 }}>
                 <Box component='li'>
                     <Typography variant='body1'>

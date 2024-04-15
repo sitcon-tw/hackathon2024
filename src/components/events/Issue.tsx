@@ -11,7 +11,7 @@ function MyButton() {
     return (
         <a className='btn-color' href='#'target='_blank'>
             <Box>
-                <Typography variant='h4' fontWeight='bold' style={{padding: '10px 40px'}}>
+                <Typography variant='h4' fontWeight='bold' style={{padding: '1.5vh 3vw'}}>
                     現況分析
                 </Typography>
             </Box>
@@ -75,7 +75,8 @@ const data = [
                 title: 'Telegram Bot X 平等起跑線',
                 description: '說明說明說明說明說明說明說明說明說明說明說明說明說明說明說明說明說明說明說明說明說明說明說明說明說明',
             },
-        ]
+        ],
+        tags: ['SDGS 10', 'SDG 5 性別平權'],
     },
     {
         title: '公創新世代：學生力量與科技共創公民參與',
@@ -94,7 +95,8 @@ const data = [
                 title: 'Cloud Native X 公創新世代',
                 description: '說明說明說明說明說明說明說明說明說明說明說明說明說明說明說明說明說明說明說明說明說明說明說明說明說明',
             },
-        ]
+        ],
+        tags: ['SDG 11', '公民參與', '公民科技'],
     },
     {
         title: '數位心擁：資訊科技促進心理健康',
@@ -113,7 +115,8 @@ const data = [
                 title: 'Telegram Bot X 平等起跑線',
                 description: '說明說明說明說明說明說明說明說明說明說明說明說明說明說明說明說明說明說明說明說明說明說明說明說明說明',
             },
-        ]
+        ],
+        tags: ['心理健康', 'Human After All', 'SDG 3'],
     }
 ];
 
@@ -124,24 +127,37 @@ const rainbowLine = {
 
 export default function Issue() {
     return (
-        <Grid container gap='60px' marginTop='60px'>
+        <Grid container gap='10vh' marginTop='10vh'>
             <WithGradient color={guideline.primary}>
                 <Typography id='issue' variant='h2' fontWeight='bold'>競賽議題</Typography>
             </WithGradient>
 
-            { data.map(({ title, src, description, subproblem }, idx) => <Box key={idx}>
-                <Grid item container gap='94px' direction='row' justifyContent='space-between'>
-                    <Grid item container gap='32px' direction='column' xs={6.5}>
+            { data.map(({ title, src, description, subproblem, tags }, idx) => <Box key={idx}>
+                <Grid item container direction='row' justifyContent='space-between'>
+                    <Grid item container gap='5vh' direction='column' xs={6.5}>
                         <Title word={title} src={src} />
                         <Typography variant='body1' whiteSpace='pre-line'>
                             {description}
                         </Typography>
-                        <Grid container alignItems='center' direction='column'>
+                        <Grid item container direction='row' justifyContent='flex-end' marginTop='-4vh' gap='1.5vw'>
+                            { tags.map((txt, idx) => (
+                                <Box key={idx} sx={{
+                                    border: '1px solid rgba(255, 255, 255, 1)',
+                                    padding: '1vh 1vw',
+                                    borderRadius: '50px'
+                                }}>
+                                    <Typography fontSize='16px' fontWeight='500'>
+                                        # {txt}
+                                    </Typography>
+                                </Box>
+                            ))}
+                        </Grid>
+                        <Grid item container alignItems='center' direction='column'>
                             <MyButton/>
                         </Grid>
                     </Grid>
-                    <Grid item container gap='0px' direction='column' xs={4}>
-                        <Typography variant='h5' fontWeight='bold' marginTop='15px' marginBottom='35px'>
+                    <Grid item container direction='column' xs={4}>
+                        <Typography variant='h5' fontWeight='bold' marginTop='3vh' marginBottom='5vh'>
                             相關子議題
                         </Typography>
                         { subproblem.map(({ title: innerTitle, description: innerDescription }, innerIdx) => (
@@ -149,7 +165,7 @@ export default function Issue() {
                         ))}
                     </Grid>
                 </Grid>
-                <Box sx={{marginTop: '60px', ...rainbowLine}} />
+                <Box sx={{marginTop: '10vh', ...rainbowLine}} />
             </Box>)}
         </Grid>
     );
