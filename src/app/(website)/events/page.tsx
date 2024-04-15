@@ -8,7 +8,7 @@ import Criterion from '@/components/events/Criterion';
 import guideline, { theme } from '@/app/guideline';
 import ContestResource from '@/components/events/ContestResource';
 
-import { createTheme, ThemeProvider, Typography, Box, CssBaseline } from '@mui/material';
+import { ThemeProvider, Typography, Box, CssBaseline } from '@mui/material';
 import { WithGradient } from '@/utils/commonComponent';
 
 const styles = {

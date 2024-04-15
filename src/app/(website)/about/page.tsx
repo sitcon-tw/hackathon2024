@@ -1,26 +1,11 @@
 'use client';
 
-import { ThemeProvider, createTheme, Typography, Box } from '@mui/material';
+import { ThemeProvider, createTheme, Typography, Box, CssBaseline } from '@mui/material';
 import TeamCard from '@/components/about/TeamCard';
-import guideline from '@/app/guideline';
+import guideline, { theme } from '@/app/guideline';
 import teamInfo from '@/data/json/teamInfo.json';
 import { TocContainer } from '@/components/TOC';
 import { WithGradient } from '@/utils/commonComponent';
-
-const theme = createTheme({
-  typography: {
-    fontFamily: 'Noto Sans TC',
-    h1: {
-      fontSize: '48px'
-    },
-    h3: {
-      fontSize: '30px'
-    },
-    body1: {
-      fontSize: '20px'
-    }
-  }
-});
 
 const styles = {
   flexContainer: {
@@ -39,6 +24,7 @@ const styles = {
 export default function About() {
   return (
     <ThemeProvider theme={theme}>
+      <CssBaseline />
       <TocContainer>
         <Box className="container" sx={styles.flexContainer}>
           <Box sx={styles.titleFlexContainer}>

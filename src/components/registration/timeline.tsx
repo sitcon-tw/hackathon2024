@@ -6,8 +6,8 @@ import { isMobile } from '@/utils/RWD';
 
 export default function Timeline() {
     return (
-        <Box style={{ position: 'relative' }}>
-            <Typography variant="h3">活動時程</Typography>
+        <Box style={{ position: 'relative' }} marginTop='13vh'>
+            <Typography variant="h3" fontWeight='bold' marginBottom='10vh'>活動時程</Typography>
             <Ellipse bgColor="#35EB934D" />
             <Image
                 src={isMobile() ? `/2024/images/timeline-mobile.svg` : `/2024/images/timeline.svg`}

@@ -28,9 +28,18 @@ export const theme = createTheme({
     h4: {
       fontSize: '24px'
     },
+    h5: {
+      fontSize: '20px'
+    },
     body1: {
       fontSize: '20px'
     },
+    body2: {
+      fontSize: '18px'
+    },
+    button: {
+      textTransform: 'none'
+    }
   },
   palette: {
     mode: 'dark'
