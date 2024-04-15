@@ -25,7 +25,7 @@ export default function Course() {
                             <Typography variant='h4' fontWeight='bold'>
                                 {name}
                             </Typography>
-                            <a className='btn-color' href={url} style={{padding: '5px 15px'}}>
+                            <a className='btn-color' href={url} style={{padding: '5px 15px'}} target='_blank'>
                                 <Typography variant='body2' sx={buttonText}>
                                     website
                                 </Typography>

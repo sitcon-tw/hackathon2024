@@ -85,7 +85,7 @@ function Card({ chosen, setChosen, data, title}: CardProps) {
                             {data[chosen].description}
                         </Typography>
                     </Box>
-                    <a className='btn-color' href={data[chosen].url} style={{padding: '5px 15px'}}>
+                    <a className='btn-color' href={data[chosen].url} style={{padding: '5px 15px'}} target='_blank'>
                         <Box>
                             <Typography variant='body2' sx={{buttonText}}>
                                 website

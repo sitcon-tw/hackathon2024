@@ -9,7 +9,7 @@ import { WithGradient } from '@/utils/commonComponent';
 
 function MyButton() {
     return (
-        <a className='btn-color' href='#'>
+        <a className='btn-color' href='#'target='_blank'>
             <Box>
                 <Typography variant='h4' fontWeight='bold' style={{padding: '10px 40px'}}>
                     現況分析

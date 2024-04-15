@@ -53,8 +53,8 @@ function MyCard() {
 
                 <Typography variant='h3' fontWeight='bold' marginTop='36px'>相關資料</Typography>
                 <Box marginTop='24px' component='ol' sx={{ listStyle: 'disc', pl: 4, color: 'rgba(255, 253, 196, 1)' }}>
-                    <Box component='li'><a href='https://core.telegram.org/bots/api'><Typography variant='body1' sx={{ textDecoration: 'underline' }}>Telegram Bot API</Typography></a></Box>
-                    <Box component='li'><a href='https://telegram.me/BotFather'><Typography variant='body1' sx={{ textDecoration: 'underline' }}>Telegram Bot Father</Typography></a></Box>
+                    <Box component='li'><a href='https://core.telegram.org/bots/api'target='_blank'><Typography variant='body1' sx={{ textDecoration: 'underline' }}>Telegram Bot API</Typography></a></Box>
+                    <Box component='li'><a href='https://telegram.me/BotFather'target='_blank'><Typography variant='body1' sx={{ textDecoration: 'underline' }}>Telegram Bot Father</Typography></a></Box>
                 </Box>
             </DialogContent>
         </RainbowDialog>
