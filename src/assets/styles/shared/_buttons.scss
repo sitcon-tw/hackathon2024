@@ -12,7 +12,6 @@
     )
     border-box;
 
-  border: $borderWidth solid transparent;
   border-radius: 1024px;
   position: relative;
   white-space: nowrap;
@@ -27,8 +26,8 @@
     height: 100%;
 
     position: absolute;
-    top: -$borderWidth;
-    left: -$borderWidth;
+    top: 0;
+    left: 0;
 
     mask: linear-gradient(white 0 0) padding-box, linear-gradient(white 0 0);
     mask-composite: exclude;
