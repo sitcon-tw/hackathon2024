@@ -35,7 +35,12 @@ export default function LandingPage() {
         <Typography variant="h3" align="center">
           SITCON Hackathon 2024
         </Typography>
-        <Typography variant="body1" align="center" color="textSecondary" sx={{ whiteSpace: 'pre-line' }}>
+        <Typography
+          variant="body1"
+          align="center"
+          color="textSecondary"
+          sx={{ whiteSpace: 'pre-line' }}
+        >
           時間：2024/7/6（六）～ 2024/7/7（日） <br />
           地點：待定
         </Typography>

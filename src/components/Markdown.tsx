@@ -10,7 +10,10 @@ interface MarkdownProps {
 
 export default function Markdown({ children, className }: MarkdownProps) {
   return (
-    <ReactMarkdown className={clsx('markdown', className)} remarkPlugins={[remarkGfm, [remarkBehead, { depth: 2 }]]}>
+    <ReactMarkdown
+      className={clsx('markdown', className)}
+      remarkPlugins={[remarkGfm, [remarkBehead, { depth: 2 }]]}
+    >
       {children}
     </ReactMarkdown>
   );

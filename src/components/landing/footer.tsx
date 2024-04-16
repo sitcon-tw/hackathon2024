@@ -41,7 +41,9 @@ export default function Footer() {
           }}
         >
           <Typography variant="h6">學生計算機年會</Typography>
-          <Typography variant="subtitle1">Students&apos; Information Technology Conference</Typography>
+          <Typography variant="subtitle1">
+            Students&apos; Information Technology Conference
+          </Typography>
         </Box>
         <Box sx={{ [breakpoints.up('sm')]: { gridArea: '2 / 1 / 3 / 2' } }}>
           <Typography variant="h6">合作聯繫</Typography>

@@ -1,6 +1,6 @@
 'use client';
 
-import { ThemeProvider, createTheme, Typography, Box, CssBaseline } from '@mui/material';
+import { ThemeProvider, Typography, Box, CssBaseline } from '@mui/material';
 import TeamCard from '@/components/about/TeamCard';
 import guideline, { theme } from '@/app/guideline';
 import teamInfo from '@/data/json/teamInfo.json';
@@ -11,7 +11,7 @@ const styles = {
   flexContainer: {
     display: 'flex',
     gap: '72px',
-    flexDirection: 'column',
+    flexDirection: 'column'
   },
   titleFlexContainer: {
     display: 'flex',
@@ -27,10 +27,10 @@ export default function About() {
       <TocContainer>
         <Box className="container" sx={styles.flexContainer}>
           <Box sx={styles.titleFlexContainer}>
-            <WithGradient color={guideline.color3} transparent='80'>
-                <Typography variant="h1" fontWeight="bold" id='team'>
+            <WithGradient color={guideline.color3} transparent="80">
+              <Typography variant="h1" fontWeight="bold" id="team">
                 SITCON 團隊
-                </Typography>
+              </Typography>
             </WithGradient>
             <Typography variant="body1">
               學生計算機年會（Students’ Information Technology Conference）自 2013

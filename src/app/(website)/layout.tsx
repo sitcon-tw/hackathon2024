@@ -13,7 +13,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
     <html lang="en">
       <body>
         <Header />
-        <Box marginLeft='3%' marginRight='4%' marginBottom='20vh'>
+        <Box marginLeft="3%" marginRight="4%" marginBottom="20vh">
           {children}
         </Box>
         <Footer />

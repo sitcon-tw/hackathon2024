@@ -8,8 +8,8 @@ interface RootLayoutProps {
 }
 
 export const metadata: Metadata = {
-  title: 'SITCON hackathon 2024',
-}
+  title: 'SITCON hackathon 2024'
+};
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (

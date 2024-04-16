@@ -1,6 +1,6 @@
 @import '../shared/breakpoints';
 @import '../shared/colors';
-@import url("https://fonts.googleapis.com/css?family=Rubik One");
+@import url('https://fonts.googleapis.com/css?family=Rubik One');
 
 #header {
   @include toUp('lg') {

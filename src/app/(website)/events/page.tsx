@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import Award from '@/components/events/Award';
 import Issue from '@/components/events/Issue';
@@ -13,32 +13,36 @@ import { WithGradient } from '@/utils/commonComponent';
 import { TocContainer } from '@/components/TOC';
 
 const styles = {
-    flexContainer: {
-        display: 'flex',
-        flexDirection: 'column',
-        gap: '72px'
-    },
-    flexInnerContainer: {
-        display: 'flex',
-        flexDirection: 'column',
-    },
+  flexContainer: {
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '72px'
+  },
+  flexInnerContainer: {
+    display: 'flex',
+    flexDirection: 'column'
+  }
 };
 
 export default function Events() {
-    return <ThemeProvider theme={theme}>
-        <CssBaseline/>
-        <TocContainer>
-            <Box sx={styles.flexContainer}>
-                <WithGradient color={guideline.primary}>
-                    <Typography variant='h1' fontWeight='bold'>黑客松活動</Typography>
-                </WithGradient>
-                <Schedule/>
-                <Issue/>
-                <ContestResource/>
-                <Workshop/>
-                <Criterion/>
-                <Award/>
-            </Box>
-        </TocContainer>
+  return (
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <TocContainer>
+        <Box sx={styles.flexContainer}>
+          <WithGradient color={guideline.primary}>
+            <Typography variant="h1" fontWeight="bold">
+              黑客松活動
+            </Typography>
+          </WithGradient>
+          <Schedule />
+          <Issue />
+          <ContestResource />
+          <Workshop />
+          <Criterion />
+          <Award />
+        </Box>
+      </TocContainer>
     </ThemeProvider>
+  );
 }

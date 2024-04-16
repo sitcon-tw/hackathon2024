@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import { IconType } from 'react-icons';
 import {
   FaFacebook,
@@ -51,15 +51,19 @@ export default function Footer() {
       <footer id="footer">
         <article className="container">
           <section className="SITCON">
-            <Typography variant='h5' fontWeight='bold'>學生計算機年會</Typography>
-            <Typography variant='h5' fontWeight='bold'>Students&apos; Information Technology Conference</Typography>
+            <Typography variant="h5" fontWeight="bold">
+              學生計算機年會
+            </Typography>
+            <Typography variant="h5" fontWeight="bold">
+              Students&apos; Information Technology Conference
+            </Typography>
           </section>
           <section className="contact">
-            <Typography variant='h5' fontWeight='bold'>
+            <Typography variant="h5" fontWeight="bold">
               合作聯繫
             </Typography>
             <a href="mailto:contact@sitcon.org">
-              <Typography variant='h5' fontWeight='bold'>
+              <Typography variant="h5" fontWeight="bold">
                 contact@sitcon.org
               </Typography>
             </a>
