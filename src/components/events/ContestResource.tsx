@@ -12,6 +12,7 @@ import {
 } from '@mui/material';
 import { RainbowDialog, WithGradient } from '@/utils/commonComponent';
 import guideline from '@/app/guideline';
+import { useMobile } from '@/utils/RWD';
 
 function MyCard() {
   const [open, setOpen] = React.useState(false);
@@ -112,6 +113,7 @@ function MyCard() {
 }
 
 export default function ContestResource() {
+  const isMobile = useMobile();
   return (
     <Box marginTop="13vh">
       <WithGradient color={guideline.color3}>
@@ -119,11 +121,19 @@ export default function ContestResource() {
           企業資源
         </Typography>
       </WithGradient>
-      <Grid container justifyContent="space-between" flexWrap="nowrap">
-        <MyCard />
-        <MyCard />
-        <MyCard />
-        <MyCard />
+      <Grid container justifyContent="space-between" flexWrap={isMobile ? undefined : "nowrap"}>
+        <Grid item>
+          <MyCard />
+        </Grid>
+        <Grid item>
+          <MyCard />
+        </Grid>
+        <Grid item >
+          <MyCard />
+        </Grid>
+        <Grid item >
+          <MyCard />
+        </Grid>
       </Grid>
     </Box>
   );

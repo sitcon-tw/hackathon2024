@@ -1,10 +1,12 @@
 'use client';
 
+import { useMobile } from '@/utils/RWD';
 import { Typography, Box } from '@mui/material';
 
 export default function Criterion() {
+  const isMobile = useMobile();
   return (
-    <Box marginBottom="5vh">
+    <Box>
       <Typography id="criterion" variant="h2" fontWeight="bold" marginBottom="9vh">
         評分標準
       </Typography>

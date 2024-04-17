@@ -6,6 +6,7 @@ import { MdAdd, MdRemove } from 'react-icons/md';
 import '@/assets/styles/pages/events.scss';
 import guideline from '@/app/guideline';
 import { WithGradient } from '@/utils/commonComponent';
+import { useMobile } from '@/utils/RWD';
 
 function MyButton() {
   return (
@@ -141,6 +142,7 @@ const rainbowLine = {
 };
 
 export default function Issue() {
+  const isMobile = useMobile();
   return (
     <Grid container gap="10vh" marginTop="10vh">
       <WithGradient color={guideline.primary}>
@@ -151,7 +153,7 @@ export default function Issue() {
 
       {data.map(({ title, src, description, subproblem, tags }, idx) => (
         <Box key={idx}>
-          <Grid item container direction="row" justifyContent="space-between">
+          <Grid item container direction={isMobile ? 'column' : 'row'} justifyContent="space-between">
             <Grid item container gap="5vh" direction="column" xs={6.5}>
               <Title word={title} src={src} />
               <Typography variant="body1" whiteSpace="pre-line">
@@ -198,7 +200,9 @@ export default function Issue() {
               ))}
             </Grid>
           </Grid>
-          <Box sx={{ marginTop: '10vh', ...rainbowLine }} />
+          {!isMobile &&
+            <Box sx={{ marginTop: '10vh', ...rainbowLine }} />
+          }
         </Box>
       ))}
     </Grid>

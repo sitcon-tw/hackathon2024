@@ -76,7 +76,7 @@ function transpose<T>(matrix: T[][]) {
   }
   return ret;
 }
-const headerHeight = 4;
+const headerHeight = 6;
 const rowHeight = (() => {
   const ret: number[] = [0, headerHeight];
   const coefficient = 1.4;
@@ -241,7 +241,7 @@ function GetCell({ content }: { content: string | number }) {
     );
   }
   return (
-    <Grid sx={{ whiteSpace: 'preline' }} item>
+    <Grid sx={{ whiteSpace: 'pre-line' }} item>
       <Typography variant="body1" fontWeight="bold" sx={{ textAlign: 'center' }}>
         {content}
       </Typography>
@@ -285,7 +285,7 @@ export default function Schedule() {
         height="1112"
         style={{
           position: 'absolute',
-          marginTop: '-40vh',
+          marginTop: '-20vh',
           marginLeft: '-10vw',
           zIndex: '-1'
         }}

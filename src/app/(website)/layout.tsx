@@ -1,3 +1,4 @@
+'use client'
 import '@/assets/styles/index.scss';
 
 interface RootLayoutProps {
@@ -7,13 +8,15 @@ interface RootLayoutProps {
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Box } from '@mui/material';
+import { useMobile } from '@/utils/RWD';
 
 export default function RootLayout({ children }: RootLayoutProps) {
+  const isMobile = useMobile();
   return (
     <html lang="en">
       <body>
         <Header />
-        <Box marginLeft="3%" marginRight="4%" marginBottom="20vh">
+        <Box marginLeft={isMobile ? '1%' : '3%'} marginRight={isMobile ? '1%' : '4%'} marginBottom="20vh">
           {children}
         </Box>
         <Footer />
