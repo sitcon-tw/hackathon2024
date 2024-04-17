@@ -5,6 +5,7 @@ import './Schedule.css';
 import { Typography, Box, Grid, Button, Card, DialogContent } from '@mui/material';
 import React from 'react';
 import { FaInfoCircle } from 'react-icons/fa';
+import { useMobile } from '@/utils/RWD';
 
 // times must contain leading zero to ensure 2-digit hour
 const times = [
@@ -273,23 +274,44 @@ function generateTableColumn(arr: (string | number)[][], idx: number) {
 }
 
 export default function Schedule() {
+  const isMobile = useMobile();
   return (
     <Box>
       <Typography id="schedule" variant="h2" fontWeight="bold" sx={{ marginBottom: '9vh' }}>
         時程表
       </Typography>
-      <UnselectableImage
-        alt=""
-        src="/2024/images/events/schedule.svg"
-        width="1043"
-        height="1112"
-        style={{
-          position: 'absolute',
-          marginTop: '-20vh',
-          marginLeft: '-10vw',
-          zIndex: '-1'
-        }}
-      />
+      {!isMobile && (
+        <UnselectableImage
+          alt=""
+          src="/2024/images/events/schedule.svg"
+          width="0"
+          height="0"
+          style={{
+            position: 'absolute',
+            marginTop: '-20vh',
+            marginLeft: '-12vw',
+            zIndex: '-1',
+            width: '100%',
+            height: 'auto'
+          }}
+        />
+      )}
+      {isMobile && (
+        <UnselectableImage
+          alt=""
+          src="/2024/images/events/schedule_mobile.svg"
+          width="0"
+          height="0"
+          style={{
+            position: 'absolute',
+            marginLeft: '-18vw',
+            zIndex: '-1',
+            width: '100%',
+            height: 'auto',
+            border: '2px solid'
+          }}
+        />
+      )}
       <Box>
         <Grid container direction="row" flexWrap="nowrap">
           <Grid item>{generateTimeColumn()}</Grid>
