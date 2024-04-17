@@ -8,12 +8,7 @@ import {
   Card,
   Grid,
   Button,
-  Dialog,
   DialogContent,
-  ListItem,
-  List,
-  Paper,
-  PaperProps
 } from '@mui/material';
 import { RainbowDialog, WithGradient } from '@/utils/commonComponent';
 import guideline from '@/app/guideline';

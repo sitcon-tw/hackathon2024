@@ -10,7 +10,7 @@ export default function Award() {
     <Box marginTop="12vh">
       <WithGradient color={guideline.secondary} transparent="4D">
         <Typography id="award" variant="h2" fontWeight="bold" marginBottom="9vh">
-          獎勵方法{' '}
+          獎勵方法
         </Typography>
       </WithGradient>
       <Typography variant="body1" marginBottom="8vh">
