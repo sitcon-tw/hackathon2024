@@ -16,7 +16,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
     <html lang="en">
       <body>
         <Header />
-        <Box marginLeft={isMobile ? '1%' : '3%'} marginRight={isMobile ? '1%' : '4%'} marginBottom="20vh">
+        <Box marginLeft={isMobile ? '0%' : '3%'} marginRight={isMobile ? '0%' : '4%'} marginBottom="20vh">
           {children}
         </Box>
         <Footer />

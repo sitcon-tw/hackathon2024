@@ -1,3 +1,4 @@
 import { useMediaQuery } from '@mui/material';
 
-export const useMobile = () => useMediaQuery('(max-width: 960px)');
+export const mobileWidth = '960px';
+export const useMobile = () => useMediaQuery(`(max-width: ${mobileWidth})`);

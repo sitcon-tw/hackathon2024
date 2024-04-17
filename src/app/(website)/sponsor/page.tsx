@@ -4,10 +4,13 @@ import { ThemeProvider, Typography, Box, CssBaseline, Button, Grid } from '@mui/
 import { TocContainer } from '@/components/TOC';
 import SponsorCard from '@/components/sponsor/SponsorCard';
 import { theme } from '@/app/guideline';
+import { useMobile } from '@/utils/RWD';
+
+import data from '@/assets/sponsor';
 
 const styles = {
   button: {
-    padding: '20px 24px',
+    padding: '3vh 2.4vw',
     borderRadius: '50px',
     borderImageSource:
       'linear-gradient(90deg, #3D3393 40%, #2B76B9 40%, #2CACD1 40%, #35EB93 40%, #73BB3A 40%)',
@@ -16,10 +19,11 @@ const styles = {
   }
 };
 
-function SponsorList({ type, children }: { type: string; children: JSX.Element[] | JSX.Element }) {
+function SponsorList({ type, width = '100%', children }: { type: string, width?: string, children: JSX.Element[] | JSX.Element }) {
+  const isMobile = useMobile();
   return (
-    <Box>
-      <Typography variant="h1" id={type} fontWeight="bold" marginBottom="56px">
+    <Box width={width}>
+      <Typography variant="h1" id={type} fontWeight="bold" marginBottom={isMobile ? '4vh' : '9vh'}>
         {type}
       </Typography>
       {children}
@@ -28,16 +32,17 @@ function SponsorList({ type, children }: { type: string; children: JSX.Element[]
 }
 
 export default function SponsorPage() {
+  const isMobile = useMobile();
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <TocContainer>
-        <Grid container direction="column" gap="120px">
+        <Grid container direction="column" gap={isMobile ? '10vh' : '20vh'}>
           <Grid item container direction="column">
             <Typography variant="h1" fontWeight="bold" id="sup">
               支持我們
             </Typography>
-            <Typography variant="body1" marginTop="56px" marginBottom="48px">
+            <Typography variant="body1" marginTop="9vh" marginBottom="8vh">
               十年以來，SITCON
               一直秉持著不向與會者收費的原則來舉辦資訊研討會，不僅創造許多學生們交流、教學互長的機會，也帶領無數學子踏入資訊的殿堂。{' '}
               <br />
@@ -65,11 +70,11 @@ export default function SponsorPage() {
               <Image
                 src="/2024/images/sponsor/sitcon.svg"
                 alt="SITCON"
-                width="417"
-                height="119"
-                style={{ marginTop: '23px' }}
+                width="0"
+                height="0"
+                style={{ marginTop: '4vh', width: isMobile ? '90%' : '40%', height: 'auto' }}
               />
-              <Typography variant="body1" fontWeight="500" marginTop="47px" color="black">
+              <Typography variant="body1" fontWeight="500" marginTop="8vh" color="black">
                 SITCON 學生計算機年會 (Students’ Information Technology Conference)
                 是一個由各校同學於網路串聯發起，鼓勵自發學習、切磋成長的學生社群。 <br />
                 <br />
@@ -83,7 +88,7 @@ export default function SponsorPage() {
           </SponsorList>
 
           <SponsorList type="共同主辦">
-            <Grid container direction="row" gap="37px" flexWrap="nowrap">
+            <Grid container direction="row" gap="3.7vw" flexWrap={isMobile ? undefined :'nowrap'}>
               <SponsorCard>
                 <Typography variant="h3" fontWeight="bold" color="black">
                   中央研究院資訊科學研究所
@@ -91,11 +96,11 @@ export default function SponsorPage() {
                 <Image
                   src="/2024/images/sponsor/iis 1.png"
                   alt="IIS"
-                  width="291"
-                  height="194"
-                  style={{ marginTop: '38px' }}
+                  width="0"
+                  height="0"
+                  style={{ marginTop: '6vh', width: isMobile ? '90%' : '45%', height: 'auto' }}
                 />
-                <Typography variant="body1" fontWeight="500" marginTop="32px" color="black">
+                <Typography variant="body1" fontWeight="500" marginTop="5vh" color="black">
                   中央研究院資訊科學研究所於 1977 年開始設立籌備處，歷經五年籌備， 於 1982 年 9
                   月正式成立研究所，是中央研究院數理組十一個單位之一。目前編制內有 39
                   位研究人員，另外有 29 位博士後研究學者，將近 300
@@ -109,11 +114,11 @@ export default function SponsorPage() {
                 <Image
                   src="/2024/images/sponsor/ocf 1.png"
                   alt="OCF"
-                  width="406"
-                  height="240"
-                  style={{ marginTop: '11px' }}
+                  width="0"
+                  height="0"
+                  style={{ marginTop: '2vh', width: isMobile ? '90%' : '70%', height: 'auto' }}
                 />
-                <Typography variant="body1" fontWeight="500" marginTop="13px" color="black">
+                <Typography variant="body1" fontWeight="500" marginTop="2vh" color="black">
                   開放文化基金會成立於 2014
                   年，由多個開源社群及活動組織共同發起，希望協助台灣蓬勃的開放社群，進一步促進開放源碼、開放資料、開放硬體等自由精神，能更廣泛的於各領域中應用，同時也協助政府、企業及非政府組織更能了解開源軟體的優勢、開放資料的重要，進而推廣開放協作的文化。2015
                   年起我們除了支援本地社群主辦多場中大型活動，也和英國代表處、美國在台協會及世界銀行等單位共同舉辦各種主題講座，深耕台灣的開放文化並與國際交流。
@@ -130,91 +135,47 @@ export default function SponsorPage() {
               <Image
                 src="/2024/images/sponsor/ITSA_LOGO1 1.png"
                 alt="ITSA"
-                width="175"
-                height="159"
-                style={{ marginTop: '14px' }}
+                width="0"
+                height="0"
+                style={{ marginTop: '2vh', width: isMobile ? '60%' : '20%', height: 'auto' }}
               />
-              <Typography variant="body1" fontWeight="500" marginTop="16px" color="black">
-                ITSA
-                為教育部智慧創新跨域人才培育計畫，協助進行數位人才之培育，聚焦於「智慧感知與互動體驗」、「大數據分析與資料科學」、「文化創意與多媒體」、「電商金融科技」四大類新興數位軟體之人才培育，以及以開源模式培養雲端運算系統軟體、嵌入式系統軟體及軟體工程人才，以補足我國各產業在相關數位應用人才需求之缺口，擴大國內各產業晉用數位軟體人才的來源。
+              <Typography variant="body1" fontWeight="500" marginTop="2.5vh" color="black">
+                ITSA 為教育部智慧創新跨域人才培育計畫，協助進行數位人才之培育，聚焦於「智慧感知與互動體驗」、「大數據分析與資料科學」、「文化創意與多媒體」、「電商金融科技」四大類新興數位軟體之人才培育，以及以開源模式培養雲端運算系統軟體、嵌入式系統軟體及軟體工程人才，以補足我國各產業在相關數位應用人才需求之缺口，擴大國內各產業晉用數位軟體人才的來源。
               </Typography>
             </SponsorCard>
           </SponsorList>
 
-          <SponsorList type="深耕級">
-            <Grid container direction="row" gap="37px" flexWrap="nowrap">
-              <SponsorCard>
-                <Typography variant="h3" fontWeight="bold" color="black">
-                  SPONSOR
-                </Typography>
-              </SponsorCard>
-              <SponsorCard>
-                <Typography variant="h3" fontWeight="bold" color="black">
-                  SPONSOR
-                </Typography>
-              </SponsorCard>
-              <SponsorCard>
-                <Typography variant="h3" fontWeight="bold" color="black">
-                  SPONSOR
-                </Typography>
-              </SponsorCard>
-              <SponsorCard>
-                <Typography variant="h3" fontWeight="bold" color="black">
-                  SPONSOR
-                </Typography>
-              </SponsorCard>
-            </Grid>
-          </SponsorList>
-
-          <SponsorList type="前瞻級">
-            <Grid container direction="row" gap="37px" flexWrap="nowrap">
-              <SponsorCard>
-                <Typography variant="h3" fontWeight="bold" color="black">
-                  SPONSOR
-                </Typography>
-              </SponsorCard>
-              <SponsorCard>
-                <Typography variant="h3" fontWeight="bold" color="black">
-                  SPONSOR
-                </Typography>
-              </SponsorCard>
-              <SponsorCard>
-                <Typography variant="h3" fontWeight="bold" color="black">
-                  SPONSOR
-                </Typography>
-              </SponsorCard>
-              <SponsorCard>
-                <Typography variant="h3" fontWeight="bold" color="black">
-                  SPONSOR
-                </Typography>
-              </SponsorCard>
-            </Grid>
-          </SponsorList>
-
-          <SponsorList type="新芽級">
-            <Grid container direction="row" gap="37px" flexWrap="nowrap">
-              <SponsorCard>
-                <Typography variant="h3" fontWeight="bold" color="black">
-                  SPONSOR
-                </Typography>
-              </SponsorCard>
-              <SponsorCard>
-                <Typography variant="h3" fontWeight="bold" color="black">
-                  SPONSOR
-                </Typography>
-              </SponsorCard>
-              <SponsorCard>
-                <Typography variant="h3" fontWeight="bold" color="black">
-                  SPONSOR
-                </Typography>
-              </SponsorCard>
-              <SponsorCard>
-                <Typography variant="h3" fontWeight="bold" color="black">
-                  SPONSOR
-                </Typography>
-              </SponsorCard>
-            </Grid>
-          </SponsorList>
+          { data.map(({ type, sponsors }, idx) => (
+            <SponsorList type={type} key={idx}>
+              <Grid
+                container
+                direction='row'
+                gap='2vw'
+                flexWrap={isMobile ? undefined : 'nowrap'}
+                justifyContent='space-between'
+              >
+                { sponsors.map(({ name, image, description }, idx) => (
+                  <Grid key={idx} item flex={isMobile ? '40%' : undefined}>
+                    <SponsorCard>
+                      <Typography variant="h3" fontWeight="bold" color="black">
+                        {name}
+                      </Typography>
+                      <Image
+                        src={`/2024/images/sponsor/${image}`}
+                        alt={`${image}`}
+                        width="0"
+                        height="0"
+                        style={{ marginTop: '2vh', width: isMobile ? '70%' : '70%', height: 'auto' }}
+                      />
+                      <Typography variant="body1" fontWeight="500" marginTop="2.5vh" color="black" whiteSpace='pre-line'>
+                        {description}
+                      </Typography>
+                    </SponsorCard>
+                  </Grid>
+                ))}
+              </Grid>
+            </SponsorList>
+          ))}
         </Grid>
       </TocContainer>
     </ThemeProvider>
