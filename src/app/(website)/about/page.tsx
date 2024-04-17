@@ -10,13 +10,13 @@ import { WithGradient } from '@/utils/commonComponent';
 const styles = {
   flexContainer: {
     display: 'flex',
-    gap: '72px',
+    gap: '12vh',
     flexDirection: 'column'
   },
   titleFlexContainer: {
     display: 'flex',
     flexDirection: 'column',
-    gap: '56px'
+    gap: '9vh'
   }
 };
 

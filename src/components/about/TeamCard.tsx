@@ -1,11 +1,12 @@
 import { Typography, Box } from '@mui/material';
 import { UnselectableImage } from '@/utils/commonComponent';
+import { useMobile } from '@/utils/RWD';
 
 const styles = {
   bodyFlexContainer: {
     display: 'flex',
     flexDirection: 'column',
-    gap: '20px'
+    gap: '3vh'
   },
   financialFlexContainer: {
     display: 'flex',
@@ -14,6 +15,7 @@ const styles = {
 };
 
 export default function TeamCard({ team, description }: { team: string; description: string }) {
+  const isMobile = useMobile();
   if (team === '財務組') {
     return (
       <Box sx={styles.bodyFlexContainer}>
@@ -30,8 +32,8 @@ export default function TeamCard({ team, description }: { team: string; descript
             style={{
               position: 'absolute',
               zIndex: -2,
-              right: '-2em',
-              marginTop: '-230px'
+              right: (isMobile ? '-150px' : '-2vw'),
+              marginTop: '-270px'
             }}
           />
         </Box>
