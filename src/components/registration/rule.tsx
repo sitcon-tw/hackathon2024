@@ -12,7 +12,7 @@ export default function Rule() {
         alt="registration-rule"
         width={0}
         height={0}
-        style={{ width: '40%', height: 'auto', position: 'absolute', left: '60%', top: '-10%' }}
+        style={{ width: '40%', height: 'auto', position: 'absolute', left: '60%', top: '0' }}
       />
       <Box style={{ position: 'relative' }}>
         <Ellipse bgColor="#2CACD166" />
