@@ -8,9 +8,9 @@ import guideline from '@/app/guideline';
 import { WithGradient } from '@/utils/commonComponent';
 import { useMobile } from '@/utils/RWD';
 
-function MyButton() {
+function MyButton({ url }: { url: string }) {
   return (
-    <a className="btn-color" href="#" target="_blank">
+    <a className="btn-color" href={url} target="_blank">
       <Box>
         <Typography variant="h4" fontWeight="bold" style={{ padding: '1.5vh 3vw' }}>
           現況分析
@@ -83,7 +83,8 @@ const data = [
           '說明說明說明說明說明說明說明說明說明說明說明說明說明說明說明說明說明說明說明說明說明說明說明說明說明'
       }
     ],
-    tags: ['SDGS 10', 'SDG 5 性別平權']
+    tags: ['SDGS 10', 'SDG 5 性別平權'],
+    url: 'https://drive.google.com/file/d/1SUshZpDR0enKVTjWWXOzJ3o-U1k-bvXu/view?usp=sharing'
   },
   {
     title: '公創新世代：學生力量與科技共創公民參與',
@@ -107,7 +108,8 @@ const data = [
           '說明說明說明說明說明說明說明說明說明說明說明說明說明說明說明說明說明說明說明說明說明說明說明說明說明'
       }
     ],
-    tags: ['SDG 11', '公民參與', '公民科技']
+    tags: ['SDG 11', '公民參與', '公民科技'],
+    url: 'https://drive.google.com/file/d/1ueSY92DnvEp_2lHC5owBM5paWw9fiRBf/view?usp=sharing'
   },
   {
     title: '數位心擁：資訊科技促進心理健康',
@@ -131,7 +133,8 @@ const data = [
           '說明說明說明說明說明說明說明說明說明說明說明說明說明說明說明說明說明說明說明說明說明說明說明說明說明'
       }
     ],
-    tags: ['心理健康', 'Human After All', 'SDG 3']
+    tags: ['心理健康', 'Human After All', 'SDG 3'],
+    url: 'https://drive.google.com/file/d/12UQLNDs8yDc8XtXb9PSfeucxwQqLSnvj/view?usp=sharing'
   }
 ];
 
@@ -151,9 +154,14 @@ export default function Issue() {
         </Typography>
       </WithGradient>
 
-      {data.map(({ title, src, description, subproblem, tags }, idx) => (
+      {data.map(({ title, src, description, subproblem, tags, url }, idx) => (
         <Box key={idx}>
-          <Grid item container direction={isMobile ? 'column' : 'row'} justifyContent="space-between">
+          <Grid
+            item
+            container
+            direction={isMobile ? 'column' : 'row'}
+            justifyContent="space-between"
+          >
             <Grid item container gap="5vh" direction="column" xs={6.5}>
               <Title word={title} src={src} />
               <Typography variant="body1" whiteSpace="pre-line">
@@ -183,7 +191,7 @@ export default function Issue() {
                 ))}
               </Grid>
               <Grid item container alignItems="center" direction="column">
-                <MyButton />
+                <MyButton url={url} />
               </Grid>
             </Grid>
             <Grid item container direction="column" xs={4}>
@@ -200,9 +208,7 @@ export default function Issue() {
               ))}
             </Grid>
           </Grid>
-          {!isMobile &&
-            <Box sx={{ marginTop: '10vh', ...rainbowLine }} />
-          }
+          {!isMobile && <Box sx={{ marginTop: '10vh', ...rainbowLine }} />}
         </Box>
       ))}
     </Grid>
