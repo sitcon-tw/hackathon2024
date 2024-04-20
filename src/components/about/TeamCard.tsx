@@ -1,6 +1,7 @@
-import { Typography, Box } from '@mui/material';
+import { Typography, Box, Grid } from '@mui/material';
 import { UnselectableImage } from '@/utils/commonComponent';
 import { useMobile } from '@/utils/RWD';
+import Image from 'next/image';
 
 const styles = {
   bodyFlexContainer: {
@@ -14,12 +15,59 @@ const styles = {
   }
 };
 
-export default function TeamCard({ team, description }: { team: string; description: string }) {
+interface Staff {
+  team: string;
+  name: string;
+  role: string;
+  email: string;
+}
+interface TeamCardProps {
+  team: string;
+  description: string;
+  staff: Staff[];
+}
+
+function StaffList({ staff }: { staff: Staff[] }) {
+  const isMobile = useMobile();
+  const size = 200;
+  return (
+    <Grid container direction="row" gap="4vw">
+      {staff.map(({ name, role, email }: Staff, idx: number) => (
+        <Grid
+          key={idx}
+          item
+          container
+          direction="column"
+          style={{
+            width: isMobile ? '23%' : '13%',
+            height: 'auto'
+          }}
+          gap="1vh"
+        >
+          <Image
+            src={`https://gravatar.com/avatar/${email}?d=mp&s=${size}`}
+            alt=""
+            width={0}
+            height={0}
+            style={{ borderRadius: '50%', width: '100%', height: 'auto' }}
+          />
+          <Typography variant="h5" textAlign="center">
+            {name}
+          </Typography>
+          <Typography variant="body2" textAlign="center">
+            {role}
+          </Typography>
+        </Grid>
+      ))}
+    </Grid>
+  );
+}
+export default function TeamCard({ team, description, staff }: TeamCardProps) {
   const isMobile = useMobile();
   if (team === '財務組') {
     return (
       <Box sx={styles.bodyFlexContainer}>
-        <Typography variant="h3" id={team}>
+        <Typography variant="h3" fontWeight="bold" id={team}>
           {team}
         </Typography>
         <Box sx={styles.financialFlexContainer}>
@@ -32,20 +80,22 @@ export default function TeamCard({ team, description }: { team: string; descript
             style={{
               position: 'absolute',
               zIndex: -2,
-              right: (isMobile ? '-150px' : '-2vw'),
+              right: isMobile ? '-150px' : '-2vw',
               marginTop: '-270px'
             }}
           />
         </Box>
+        <StaffList staff={staff.filter((s) => s.team === team)} />
       </Box>
     );
   }
   return (
     <Box sx={styles.bodyFlexContainer}>
-      <Typography variant="h3" id={team}>
+      <Typography variant="h3" fontWeight="bold" id={team}>
         {team}
       </Typography>
       <Typography variant="body1">{description}</Typography>
+      <StaffList staff={staff.filter((s) => s.team === team)} />
     </Box>
   );
 }

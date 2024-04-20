@@ -4,6 +4,7 @@ import { ThemeProvider, Typography, Box, CssBaseline } from '@mui/material';
 import TeamCard from '@/components/about/TeamCard';
 import guideline, { theme } from '@/app/guideline';
 import teamInfo from '@/data/json/teamInfo.json';
+import staff from '@/data/json/staff.json';
 import { TocContainer } from '@/components/TOC';
 import { WithGradient } from '@/utils/commonComponent';
 
@@ -38,7 +39,7 @@ export default function About() {
             </Typography>
           </Box>
           {teamInfo.map(({ team, description }: { team: string; description: string }) => (
-            <TeamCard key={team} team={team} description={description} />
+            <TeamCard key={team} team={team} description={description} staff={staff} />
           ))}
         </Box>
       </TocContainer>
