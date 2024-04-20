@@ -36,7 +36,7 @@ export default function Rule() {
               參賽資格
             </Typography>
             <Typography variant="body1" marginTop="2vh">
-              全國各級高中職、大專院校在學學生
+              全國各級高中職、大專院校在學學生或 2000 年 1 月 1 日後出生者
             </Typography>
           </Grid>
         </Grid>
@@ -67,7 +67,15 @@ export default function Rule() {
                 </Box>
                 <Box component="li">
                   <Typography variant="body1">
-                    因家庭經濟等因素無力負擔報名費之學生另設有補助名額，詳情請見 補助辦法。
+                    因家庭經濟等因素無力負擔報名費之學生另設有補助名額，詳情請見{' '}
+                    <a
+                      href="https://drive.google.com/file/d/16MQWK86QmC7W0kQ303E00SLlL9wfLIPO/view?usp=sharing"
+                      target="_blank"
+                      style={{ textDecoration: 'underline' }}
+                    >
+                      補助辦法
+                    </a>
+                    。
                   </Typography>
                 </Box>
               </Box>
