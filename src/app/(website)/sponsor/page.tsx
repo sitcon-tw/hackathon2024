@@ -7,6 +7,7 @@ import { theme } from '@/app/guideline';
 import { useMobile } from '@/utils/RWD';
 
 import data from '@/assets/sponsor';
+import Link from 'next/link';
 
 const styles = {
   button: {
@@ -19,7 +20,15 @@ const styles = {
   }
 };
 
-function SponsorList({ type, width = '100%', children }: { type: string, width?: string, children: JSX.Element[] | JSX.Element }) {
+function SponsorList({
+  type,
+  width = '100%',
+  children
+}: {
+  type: string;
+  width?: string;
+  children: JSX.Element[] | JSX.Element;
+}) {
   const isMobile = useMobile();
   return (
     <Box width={width}>
@@ -54,11 +63,13 @@ export default function SponsorPage() {
               contact@sitcon.org 聯絡我們，商討更多的合作方式！
             </Typography>
             <Grid item alignSelf="center">
-              <Button sx={styles.button}>
-                <Typography variant="h4" fontWeight="bold" color="white">
-                  索取贊助徵求書
-                </Typography>
-              </Button>
+              <Link href="https://i.sitcon.org/2024cfs-form" target="_blank">
+                <Button sx={styles.button}>
+                  <Typography variant="h4" fontWeight="bold" color="white">
+                    索取贊助徵求書
+                  </Typography>
+                </Button>
+              </Link>
             </Grid>
           </Grid>
 
@@ -88,7 +99,7 @@ export default function SponsorPage() {
           </SponsorList>
 
           <SponsorList type="共同主辦">
-            <Grid container direction="row" gap="3.7vw" flexWrap={isMobile ? undefined :'nowrap'}>
+            <Grid container direction="row" gap="3.7vw" flexWrap={isMobile ? undefined : 'nowrap'}>
               <SponsorCard>
                 <Typography variant="h3" fontWeight="bold" color="black">
                   中央研究院資訊科學研究所
@@ -140,21 +151,22 @@ export default function SponsorPage() {
                 style={{ marginTop: '2vh', width: isMobile ? '60%' : '20%', height: 'auto' }}
               />
               <Typography variant="body1" fontWeight="500" marginTop="2.5vh" color="black">
-                ITSA 為教育部智慧創新跨域人才培育計畫，協助進行數位人才之培育，聚焦於「智慧感知與互動體驗」、「大數據分析與資料科學」、「文化創意與多媒體」、「電商金融科技」四大類新興數位軟體之人才培育，以及以開源模式培養雲端運算系統軟體、嵌入式系統軟體及軟體工程人才，以補足我國各產業在相關數位應用人才需求之缺口，擴大國內各產業晉用數位軟體人才的來源。
+                ITSA
+                為教育部智慧創新跨域人才培育計畫，協助進行數位人才之培育，聚焦於「智慧感知與互動體驗」、「大數據分析與資料科學」、「文化創意與多媒體」、「電商金融科技」四大類新興數位軟體之人才培育，以及以開源模式培養雲端運算系統軟體、嵌入式系統軟體及軟體工程人才，以補足我國各產業在相關數位應用人才需求之缺口，擴大國內各產業晉用數位軟體人才的來源。
               </Typography>
             </SponsorCard>
           </SponsorList>
 
-          { data.map(({ type, sponsors }, idx) => (
+          {data.map(({ type, sponsors }, idx) => (
             <SponsorList type={type} key={idx}>
               <Grid
                 container
-                direction='row'
-                gap='2vw'
+                direction="row"
+                gap="2vw"
                 flexWrap={isMobile ? undefined : 'nowrap'}
-                justifyContent='space-between'
+                justifyContent="space-between"
               >
-                { sponsors.map(({ name, image, description }, idx) => (
+                {sponsors.map(({ name, image, description }, idx) => (
                   <Grid key={idx} item flex={isMobile ? '40%' : undefined}>
                     <SponsorCard>
                       <Typography variant="h3" fontWeight="bold" color="black">
@@ -165,9 +177,19 @@ export default function SponsorPage() {
                         alt={`${image}`}
                         width="0"
                         height="0"
-                        style={{ marginTop: '2vh', width: isMobile ? '70%' : '70%', height: 'auto' }}
+                        style={{
+                          marginTop: '2vh',
+                          width: isMobile ? '70%' : '70%',
+                          height: 'auto'
+                        }}
                       />
-                      <Typography variant="body1" fontWeight="500" marginTop="2.5vh" color="black" whiteSpace='pre-line'>
+                      <Typography
+                        variant="body1"
+                        fontWeight="500"
+                        marginTop="2.5vh"
+                        color="black"
+                        whiteSpace="pre-line"
+                      >
                         {description}
                       </Typography>
                     </SponsorCard>
