@@ -88,13 +88,17 @@ export default function Home() {
         </section>
       </article>
       <article className="btns">
-        <a href="#" target="_blank" className="btn-color">
+        <a href="https://forms.gle/pAyR1ztX587L85Wm7" target="_blank" className="btn-color">
           預約跳坑表單
         </a>
-        <a href="#" target="_blank" className="btn-color">
+        <a href="https://groups.google.com/g/sitcon-general" target="_blank" className="btn-color">
           郵件紀錄
         </a>
-        <a href="#" target="_blank" className="btn-color">
+        <a
+          href="https://gitlab.com/sitcon-tw/hackathon/sitcon-hackathon-2024/-/wikis/home"
+          target="_blank"
+          className="btn-color"
+        >
           籌備紀錄
         </a>
       </article>
