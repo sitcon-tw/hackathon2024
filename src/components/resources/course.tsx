@@ -1,7 +1,7 @@
 'use client';
 
+import { useMobile } from '@/utils/RWD';
 import { Grid, Typography } from '@mui/material';
-import { FaCheck } from 'react-icons/fa';
 
 const data = [
   {
@@ -17,12 +17,21 @@ const buttonText = {
 };
 
 export default function Course() {
+  const isMobile = useMobile();
   return (
-    <Grid container gap="56px" direction="column">
+    <Grid container gap={isMobile ? '5vh' : '9vh'} direction="column">
       <Typography id="course" variant="h2" fontWeight="bold">
         線上課程
       </Typography>
-      <Grid item container direction="row" justifyContent="space-around" flexWrap="nowrap">
+      <Grid
+        item
+        container
+        direction={isMobile ? 'column' : 'row'}
+        gap={isMobile ? '2vh' : undefined}
+        justifyContent="space-around"
+        marginLeft="10px"
+        flexWrap="nowrap"
+      >
         {data.map(({ name, url }, index) => (
           <Grid
             display="inline-flex"
@@ -31,6 +40,8 @@ export default function Course() {
             key={index}
             direction="row"
             alignItems="center"
+            justifyContent={isMobile ? 'space-between' : undefined}
+            width={isMobile ? '90%' : undefined}
             gap="10px"
           >
             <Typography variant="h4" fontWeight="bold">

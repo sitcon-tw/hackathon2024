@@ -1,8 +1,16 @@
 'use client';
 
-import { Box, Grid, Typography } from '@mui/material';
+import {
+  Box,
+  FormControl,
+  Grid,
+  InputLabel,
+  MenuItem,
+  Select,
+  SelectChangeEvent,
+  Typography
+} from '@mui/material';
 import { Dispatch, SetStateAction, useState } from 'react';
-import { FaCheck } from 'react-icons/fa';
 import { UnselectableImage } from '@/utils/commonComponent';
 import govern from '@/data/json/govern.json';
 import api from '@/data/json/api.json';
@@ -14,7 +22,7 @@ const buttonText = {
 
 interface CardProps {
   chosen: number;
-  setChosen: Dispatch<SetStateAction<number>>;
+  handleChosen: (e: SelectChangeEvent) => void;
   data: {
     name: string;
     description: string;
@@ -28,13 +36,13 @@ function Illustrate({ title }: { title: string }) {
   let src: string;
   let offset: string;
   if (title === '政府單位開放資料平台') {
-    offset = '2vw';
+    offset = '-6vw';
     src = '/2024/images/resources/pic1.svg';
   } else if (title === '實用 API') {
-    offset = '-28vw';
+    offset = '-25vw';
     src = '/2024/images/resources/pic2.svg';
   } else {
-    offset = '3vw';
+    offset = '-8vw';
     src = '/2024/images/resources/pic3.svg';
   }
 
@@ -46,48 +54,43 @@ function Illustrate({ title }: { title: string }) {
       alt="插圖"
       style={{
         position: 'absolute',
-        marginTop: '-31vh',
+        marginTop: '-30vh',
         marginLeft: offset
       }}
     />
   );
 }
-function Card({ chosen, setChosen, data, title }: CardProps) {
+function Card({ chosen, handleChosen, data, title }: CardProps) {
   return (
-    <Grid container gap="9vh" direction="column" marginTop="14vh">
+    <Grid container gap="4vh" direction="column" marginTop="10vh">
       <Grid item>
         <Typography variant="h2" fontWeight="bold" id={title}>
           {title}
         </Typography>
       </Grid>
-      <Grid item marginLeft="2vw" container direction="row" justifyContent="space-between">
-        <Grid item container gap="3vh" direction="column" width="30%">
-          {data.map(({ name }, index) => {
-            return (
-              <div key={index} onClick={(e) => setChosen(index)} style={{ cursor: 'pointer' }}>
-                <Grid container key={index} direction="row" flexWrap="nowrap">
-                  <Box>
-                    {index == chosen ? <FaCheck size="26px" /> : <Box width="26px" height="26px" />}
-                  </Box>
-                  <Box>
-                    {index == chosen ? (
-                      <Typography variant="h4" fontWeight="bold" marginLeft="1vw">
-                        {name}
-                      </Typography>
-                    ) : (
-                      <Typography variant="h4" fontWeight="bold" marginLeft="1vw" color="#EFEFEF8F">
-                        {name}
-                      </Typography>
-                    )}
-                  </Box>
-                </Grid>
-              </div>
-            );
-          })}
+      <Grid item container direction="column" justifyContent="space-between" gap="1vh">
+        <Grid item width="95%">
+          <FormControl fullWidth>
+            <InputLabel id="demo-simple-select-label">Age</InputLabel>
+            <Select
+              labelId="demo-simple-select-label"
+              id="demo-simple-select"
+              value={chosen.toString()}
+              // label=""
+              onChange={handleChosen}
+            >
+              {data.map(({ name }, index) => (
+                <MenuItem key={index} value={index}>
+                  <Typography variant="h3" fontWeight="bold">
+                    {name}
+                  </Typography>
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
         </Grid>
         <Grid
           item
-          width="55%"
           container
           alignItems="center"
           direction="column"
@@ -98,7 +101,7 @@ function Card({ chosen, setChosen, data, title }: CardProps) {
           }}
         >
           <Illustrate title={title} />
-          <Box margin="5vh 4vw">
+          <Box margin="3vh 7vw">
             <Typography variant="body1">{data[chosen].description}</Typography>
           </Box>
           <a
@@ -119,20 +122,33 @@ function Card({ chosen, setChosen, data, title }: CardProps) {
   );
 }
 
-export default function ResourceCard() {
+export default function ResourceCardMobile() {
   const [governChosen, setGovernChosen] = useState(0);
   const [apiChosen, setApiChosen] = useState(0);
   const [toolChosen, setToolChosen] = useState(0);
+  function handleChosen<T>(setChosen: Dispatch<SetStateAction<T>>) {
+    return (e: SelectChangeEvent) => setChosen(e.target.value as T);
+  }
   return (
     <Grid>
       <Card
         chosen={governChosen}
-        setChosen={setGovernChosen}
+        handleChosen={handleChosen(setGovernChosen)}
         data={govern}
         title="政府單位開放資料平台"
       />
-      <Card chosen={apiChosen} setChosen={setApiChosen} data={api} title="實用 API" />
-      <Card chosen={toolChosen} setChosen={setToolChosen} data={tool} title="開發工具" />
+      <Card
+        chosen={apiChosen}
+        handleChosen={handleChosen(setApiChosen)}
+        data={api}
+        title="實用 API"
+      />
+      <Card
+        chosen={toolChosen}
+        handleChosen={handleChosen(setToolChosen)}
+        data={tool}
+        title="開發工具"
+      />
     </Grid>
   );
 }
