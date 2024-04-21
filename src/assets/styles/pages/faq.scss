@@ -66,6 +66,7 @@
           display: block;
           overflow: hidden;
           content: attr(data-content);
+          white-space: pre-line;
         }
       }
     }
