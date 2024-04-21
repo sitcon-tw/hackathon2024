@@ -35,3 +35,16 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: out
           publish_branch: gh-pages
+
+      - name: Trigger workflow in other repo
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.GHA_WORKFLOW_TRIGGER }}
+          script: |
+            const result = await github.rest.actions.createWorkflowDispatch({
+              owner: 'sitcon-tw',
+              repo: 'hackathon',
+              workflow_id: 'updateSubmodules.yml',
+              ref: 'gh-pages'
+            })
+            console.log(result)
