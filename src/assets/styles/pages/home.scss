@@ -18,6 +18,10 @@
     font-size: clamp(22px, 3.5vw, 30px);
     font-weight: 700;
 
+    @include toUp('lg') {
+      min-height: 550px;
+    }
+
     @include toDown('md') {
       padding: 30px 0px;
     }
@@ -49,6 +53,28 @@
       gap: 25px;
     }
   }
+
+  .banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    aspect-ratio: 9 / 5;
+    overflow-y: hidden;
+    z-index: -2;
+
+    @include toUp('lg') {
+      position: absolute;
+      top: 60px;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
   .topic {
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 40px;
@@ -132,28 +158,4 @@
       padding: 20px 30px;
     }
   }
-
-  // .background {
-  //   background-image: url('/2024/images/main.svg');
-  //   background-repeat: no-repeat;
-  //   background-position: center;
-  //   background-size: auto;
-
-  //   width: 100%;
-  //   max-width: 1280px;
-  //   min-height: 700px;
-  //   z-index: -1;
-
-  //   @include toUp('md') {
-  //   }
-  //   position: absolute;
-
-  //   @include toUp('lg') {
-  //     top: 150px;
-  //   }
-
-  //   @include toDown('md') {
-  //     top: 400px;
-  //   }
-  // }
 }

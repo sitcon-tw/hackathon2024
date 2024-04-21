@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Ellipse from '@/components/registration/ellipse';
 import VisionImage from '@/assets/images/main-vision.svg';
+import MainImage from '@/assets/images/main.svg';
 
 export default function Home() {
   return (
@@ -30,6 +31,9 @@ export default function Home() {
             </Link>
           </section>
         </div>
+      </article>
+      <article className="banner">
+        <Image src={MainImage} alt="main" />
       </article>
       <article className="topic">
         <h1>黑客松主題</h1>
