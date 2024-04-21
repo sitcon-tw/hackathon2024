@@ -26,6 +26,8 @@ jobs:
 
       - name: Build app
         run: pnpm run build
+        env:
+          SCRIPT_APP_ID: ${{ vars.SCRIPT_APP_ID }}
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
