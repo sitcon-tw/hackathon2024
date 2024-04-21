@@ -2,14 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
-import {
-  Typography,
-  Box,
-  Card,
-  Grid,
-  Button,
-  DialogContent,
-} from '@mui/material';
+import { Typography, Box, Card, Grid, Button, DialogContent } from '@mui/material';
 import { RainbowDialog, WithGradient } from '@/utils/commonComponent';
 import guideline from '@/app/guideline';
 import { useMobile } from '@/utils/RWD';
@@ -121,8 +114,11 @@ export default function ContestResource() {
           企業資源
         </Typography>
       </WithGradient>
-      <Grid container justifyContent="space-between" flexWrap={isMobile ? undefined : "nowrap"}>
-        <Grid item>
+      <Grid container justifyContent="space-between" flexWrap={isMobile ? undefined : 'nowrap'}>
+        <Typography variant="h5" fontWeight="bold">
+          即將公開～
+        </Typography>
+        {/* <Grid item>
           <MyCard />
         </Grid>
         <Grid item>
@@ -133,7 +129,7 @@ export default function ContestResource() {
         </Grid>
         <Grid item >
           <MyCard />
-        </Grid>
+        </Grid> */}
       </Grid>
     </Box>
   );

@@ -157,7 +157,7 @@ export default function SponsorPage() {
             </SponsorCard>
           </SponsorList>
 
-          {data.map(({ type, sponsors }, idx) => (
+          {/* {data.map(({ type, sponsors }, idx) => (
             <SponsorList type={type} key={idx}>
               <Grid
                 container
@@ -197,7 +197,7 @@ export default function SponsorPage() {
                 ))}
               </Grid>
             </SponsorList>
-          ))}
+          ))} */}
         </Grid>
       </TocContainer>
     </ThemeProvider>
