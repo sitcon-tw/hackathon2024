@@ -1,4 +1,4 @@
-import { Typography, Box, Grid } from '@mui/material';
+import { Typography, Box, Grid, Stack } from '@mui/material';
 import { UnselectableImage } from '@/utils/commonComponent';
 import { useMobile } from '@/utils/RWD';
 import Image from 'next/image';
@@ -39,24 +39,35 @@ function StaffList({ staff }: { staff: Staff[] }) {
           container
           direction="column"
           style={{
-            width: isMobile ? '23%' : '13%',
+            // width: isMobile ? '23%' : '13%',
+            width: '120px',
             height: 'auto'
           }}
           gap="1vh"
         >
-          <Image
-            src={`https://gravatar.com/avatar/${email}?d=mp&s=${size}`}
-            alt=""
-            width={0}
-            height={0}
-            style={{ borderRadius: '50%', width: '100%', height: 'auto' }}
-          />
-          <Typography variant="h5" textAlign="center">
-            {name}
-          </Typography>
-          <Typography variant="body2" textAlign="center">
-            {role}
-          </Typography>
+          <Box
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center',
+              alignItems: 'center',
+              rowGap: '5px'
+            }}
+          >
+            <Image
+              src={`https://gravatar.com/avatar/${email}?d=mp&s=${size}`}
+              alt=""
+              width={0}
+              height={0}
+              style={{ borderRadius: '50%', aspectRatio: '1/1', width: '80px', height: 'auto' }}
+            />
+            <Typography variant="h5" textAlign="center" sx={{ fontSize: '.8em' }}>
+              {name}
+            </Typography>
+            <Typography variant="body2" textAlign="center" sx={{ fontSize: '.7em' }}>
+              {role}
+            </Typography>
+          </Box>
         </Grid>
       ))}
     </Grid>
