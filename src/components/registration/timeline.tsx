@@ -17,7 +17,7 @@ export default function Timeline() {
         alt="timeline"
         width={0}
         height={0}
-        style={{ width: '80%', height: 'auto', margin: '10px', zIndex: -1 }}
+        style={{ width: '100%', height: 'auto', margin: '10px', zIndex: -1 }}
       />
     </Box>
   );
