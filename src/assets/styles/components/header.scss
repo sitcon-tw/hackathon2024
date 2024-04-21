@@ -3,6 +3,9 @@
 @import url('https://fonts.googleapis.com/css?family=Rubik One');
 
 #header {
+  position: relative;
+  z-index: 99999;
+
   @include toUp('lg') {
     max-width: 1280px;
   }
