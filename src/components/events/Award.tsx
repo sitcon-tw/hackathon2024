@@ -16,28 +16,31 @@ export default function Award() {
         </Typography>
       </WithGradient>
       <Typography variant="body1" marginBottom="8vh">
-        各個資源提供企業會在最後評選出兩個優秀團隊予以獎項，共 8 組獎項，總獎金 3.2 萬。
+        各個資源提供方會在最後評選出兩個優秀團隊予以獎項。
       </Typography>
-      <Grid container sx={{ color: '#B7EFFF' }} direction='row' justifyContent={isMobile ? 'space-between' : undefined}>
-        <Grid item xs={isMobile ? 5 : 3} container gap="3vh" direction='column'>
+      <Grid
+        container
+        sx={{ color: '#B7EFFF' }}
+        direction="row"
+        justifyContent={isMobile ? 'space-between' : undefined}
+      >
+        <Grid item xs={isMobile ? 5 : 3} container gap="3vh" direction="column">
           <Grid container flexDirection="row" alignItems="center" gap="1.5vw">
             <Image src="/2024/images/events/medal.svg" alt="svg" width="35" height="35" />
             <Typography variant="h4" fontWeight="bold">
-              創意獎*4
+              創意獎
             </Typography>
           </Grid>
           <Typography variant="h4" fontWeight="bold">
             獎金: 4000 元 / 團隊
           </Typography>
         </Grid>
-        { !isMobile && 
-          <Grid item xs={3}></Grid>
-        }
-        <Grid item xs={isMobile ? 5 : 3} container gap="3vh" direction='column'>
+        {!isMobile && <Grid item xs={3}></Grid>}
+        <Grid item xs={isMobile ? 5 : 3} container gap="3vh" direction="column">
           <Grid container flexDirection="row" alignItems="center" gap="1.5vw">
             <Image src="/2024/images/events/medal.svg" alt="svg" width="35" height="35" />
             <Typography variant="h4" fontWeight="bold">
-              技術獎*4
+              技術獎
             </Typography>
           </Grid>
           <Typography variant="h4" fontWeight="bold">
