@@ -71,13 +71,14 @@ function Card({ chosen, handleChosen, data, title }: CardProps) {
       <Grid item container direction="column" justifyContent="space-between" gap="1vh">
         <Grid item width="95%">
           <FormControl fullWidth>
-            <InputLabel id="demo-simple-select-label">Age</InputLabel>
             <Select
-              labelId="demo-simple-select-label"
-              id="demo-simple-select"
+              labelId={title}
+              id={title}
               value={chosen.toString()}
-              // label=""
               onChange={handleChosen}
+              style={{
+                border: '1px solid'
+              }}
             >
               {data.map(({ name }, index) => (
                 <MenuItem key={index} value={index}>
