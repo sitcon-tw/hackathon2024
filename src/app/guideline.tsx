@@ -21,43 +21,43 @@ export const theme = createTheme({
     h1: {
       fontSize: '48px',
       [`@media (max-width:${mobileWidth})`]: {
-        fontSize: '30px',
+        fontSize: '30px'
       }
     },
     h2: {
       fontSize: '36px',
       [`@media (max-width:${mobileWidth})`]: {
-        fontSize: '24px',
+        fontSize: '24px'
       }
     },
     h3: {
       fontSize: '30px',
       [`@media (max-width:${mobileWidth})`]: {
-        fontSize: '22px',
+        fontSize: '22px'
       }
     },
     h4: {
       fontSize: '24px',
       [`@media (max-width:${mobileWidth})`]: {
-        fontSize: '20px',
+        fontSize: '20px'
       }
     },
     h5: {
       fontSize: '20px',
       [`@media (max-width:${mobileWidth})`]: {
-        fontSize: '18px',
+        fontSize: '18px'
       }
     },
     body1: {
       fontSize: '20px',
       [`@media (max-width:${mobileWidth})`]: {
-        fontSize: '18px',
+        fontSize: '18px'
       }
     },
     body2: {
       fontSize: '18px',
       [`@media (max-width:${mobileWidth})`]: {
-        fontSize: '16px',
+        fontSize: '16px'
       }
     },
     button: {

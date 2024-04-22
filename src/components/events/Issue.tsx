@@ -111,11 +111,12 @@ function Title({ word, src }: { word: string; src: string }) {
     </Grid>
   );
 }
+type AvailableSponsor = 'iis' | 'sitcon' | 'line';
 interface DropdownProps {
   index: string;
   question: string;
   answer: string;
-  sponsor: 'iis' | 'sitcon' | 'line';
+  sponsor: AvailableSponsor;
 }
 const sponsorMapping = {
   iis: '臺北市資訊局',
@@ -215,7 +216,7 @@ export default function Issue() {
                     index={`${idx}-${innerIdx}`}
                     question={innerTitle}
                     answer={innerDescription}
-                    sponsor={sponsor}
+                    sponsor={sponsor as AvailableSponsor}
                   />
                 )
               )}

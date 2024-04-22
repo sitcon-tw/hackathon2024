@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import '@/assets/styles/index.scss';
 
 interface RootLayoutProps {
@@ -16,7 +16,11 @@ export default function RootLayout({ children }: RootLayoutProps) {
     <html lang="en">
       <body>
         <Header />
-        <Box marginLeft={isMobile ? '0%' : '3%'} marginRight={isMobile ? '0%' : '4%'} marginBottom="20vh">
+        <Box
+          marginLeft={isMobile ? '0%' : '3%'}
+          marginRight={isMobile ? '0%' : '4%'}
+          marginBottom="20vh"
+        >
           {children}
         </Box>
         <Footer />
