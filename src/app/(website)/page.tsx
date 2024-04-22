@@ -23,7 +23,7 @@ export default function Home() {
             <p>臺北市政府公務人員訓練處</p>
           </section>
           <section className="links">
-            <Link className="btn-white" href="/event">
+            <Link className="btn-white" href="/events">
               活動資訊
             </Link>
             <Link className="btn-white" href="/registration">
