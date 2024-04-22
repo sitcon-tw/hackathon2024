@@ -119,7 +119,7 @@ interface DropdownProps {
   sponsor: AvailableSponsor;
 }
 const sponsorMapping = {
-  iis: '臺北市資訊局',
+  iis: '台北市政府資訊局',
   sitcon: 'SITCON',
   line: 'LINE'
 };
@@ -132,7 +132,7 @@ function DropDown({ index, question, answer, sponsor }: DropdownProps) {
           <p className="question">
             <label htmlFor={`issue-${index}`}>
               {question}
-              {' by '}
+              {' X '}
               {sponsorMapping[sponsor]}
             </label>
             <label htmlFor={`issue-${index}`}>
