@@ -26,7 +26,7 @@ export default function Home() {
             <Link className="btn-white" href="/events">
               活動資訊
             </Link>
-            <Link className="btn-white" href="/registration">
+            <Link className="btn-white" href="/registration" style={{ visibility: 'hidden' }}>
               立即報名
             </Link>
           </section>

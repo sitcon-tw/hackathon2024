@@ -23,7 +23,9 @@ export default function Header() {
         SITCON Hackathon
       </Link>
       <div className="mobile-options">
-        <button className="btn-color">活動報名</button>
+        <button className="btn-color" style={{ visibility: 'hidden' }}>
+          活動報名
+        </button>
         <AiOutlineMenu onClick={() => toggle.on()} />
       </div>
       <nav id="nav" className={clsx({ active: toggle.isOpen })}>
