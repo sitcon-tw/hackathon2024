@@ -119,7 +119,7 @@ interface DropdownProps {
   sponsor: AvailableSponsor;
 }
 const sponsorMapping = {
-  iis: '台北市政府資訊局',
+  iis: '臺北市政府資訊局',
   sitcon: 'SITCON',
   line: 'LINE'
 };
