@@ -70,7 +70,7 @@ export default function Rule() {
                   </Typography>
                 </Box>
                 <Box component="li">
-                  <Typography variant="body1">報名費含衣服、保險、場地清潔等費用。</Typography>
+                  <Typography variant="body1">報名費含保險、場地清潔等費用。</Typography>
                 </Box>
                 <Box component="li">
                   <Typography variant="body1">
@@ -129,7 +129,7 @@ export default function Rule() {
                 </Box>
                 <Box component="li">
                   <Typography variant="body1">
-                    報名時需依三個議題及企業方提供的工具進行志願序排序，若單一企業超額，將依亂數分發。
+                    報名時需依三個議題及資源提供方提供的工具進行志願序排序，若單一資源提供方超額，將依亂數分發。
                   </Typography>
                 </Box>
               </Box>

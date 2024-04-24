@@ -111,7 +111,7 @@ export default function ContestResource() {
     <Box marginTop="13vh">
       <WithGradient color={guideline.color3}>
         <Typography id="contest-resource" variant="h2" fontWeight="bold" marginBottom="2rem">
-          企業資源
+          專案資源
         </Typography>
       </WithGradient>
       <Grid container justifyContent="space-between" flexWrap={isMobile ? undefined : 'nowrap'}>

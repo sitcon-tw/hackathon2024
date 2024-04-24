@@ -12,7 +12,7 @@ export default function Notice() {
       <Box component="ol" sx={{ listStyle: 'decimal', pl: 4 }}>
         <Box component="li">
           <Typography variant="body1">
-            主辦方將依據每支隊伍所排志願序，於公布錄取隊伍時，告知每支隊伍所分配到企業提供的工具。
+            主辦方將依據每支隊伍所排志願序，於公布錄取隊伍時，告知每支隊伍所分配到資源提供方提供的工具。
           </Typography>
         </Box>
         <Box component="li">
@@ -20,7 +20,7 @@ export default function Notice() {
         </Box>
         <Box component="li">
           <Typography variant="body1">
-            主辦方與企業可於活動中拍照與錄影，並作為未來宣傳使用。
+            主辦方與資源提供方可於活動中拍照與錄影，並作為未來宣傳使用。
           </Typography>
         </Box>
         <Box component="li">

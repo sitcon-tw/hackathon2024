@@ -226,8 +226,8 @@ function GetCell({ content }: { content: string | number }) {
               Demo Time
             </Typography>
             <Typography variant="body1" marginTop="3vh">
-              團隊向企業進行成果 Demo
-              的時間，也提供交流區讓有興趣的團隊向更多人分享專案，與競賽團隊、社群及企業一同交流。
+              團隊向資源提供方進行成果 Demo
+              的時間，也提供交流區讓有興趣的團隊向更多人分享專案，與競賽團隊、社群及資源提供方一同交流。
             </Typography>
 
             <Typography variant="h3" fontWeight="bold" marginTop="4vh">

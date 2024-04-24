@@ -13,13 +13,13 @@ export default function Criterion() {
       <Box component="ol" sx={{ listStyle: 'decimal', pl: 4 }}>
         <Box component="li">
           <Typography variant="body1">
-            各團隊專案將於競賽的第二天下午，依所使用工具的企業方進行
-            Demo，每間企業將評選出一組創意獎及一組技術獎。
+            各團隊專案將於競賽的第二天下午，依所使用工具的資源提供方進行
+            Demo，每間資源提供方將評選出一組創意獎及一組技術獎。
           </Typography>
         </Box>
         <Box component="li">
           <Typography variant="body1">
-            若隊伍完成的專案未使用指定企業提供的工具，則該專案不列入評分。
+            若隊伍完成的專案未使用指定資源提供方提供的工具，則該專案不列入評分。
           </Typography>
         </Box>
         <Box component="li">
