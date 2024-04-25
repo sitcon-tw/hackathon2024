@@ -123,7 +123,7 @@ export default function SponsorPage() {
                   財團法人開放文化基金會
                 </Typography>
                 <Image
-                  src="/2024/images/sponsor/ocf 1.png"
+                  src="/2024/images/sponsor/ocf.png"
                   alt="OCF"
                   width="0"
                   height="0"
