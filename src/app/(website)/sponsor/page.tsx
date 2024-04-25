@@ -157,7 +157,7 @@ export default function SponsorPage() {
             </SponsorCard>
           </SponsorList>
 
-          {/* {data.map(({ type, sponsors }, idx) => (
+          {data.map(({ type, sponsors }, idx) => (
             <SponsorList type={type} key={idx}>
               <Grid
                 container
@@ -166,7 +166,7 @@ export default function SponsorPage() {
                 flexWrap={isMobile ? undefined : 'nowrap'}
                 justifyContent="space-between"
               >
-                {sponsors.map(({ name, image, description }, idx) => (
+                {sponsors.map(({ name, image, description, url }, idx) => (
                   <Grid key={idx} item flex={isMobile ? '40%' : undefined}>
                     <SponsorCard>
                       <Typography variant="h3" fontWeight="bold" color="black">
@@ -192,12 +192,27 @@ export default function SponsorPage() {
                       >
                         {description}
                       </Typography>
+                      {url !== '' ? (
+                        <a className="btn-color" href={url} target="_blank">
+                          <Box>
+                            <Typography
+                              variant="h4"
+                              fontWeight="bold"
+                              style={{ padding: '1.5vh 3vw' }}
+                            >
+                              前往網站
+                            </Typography>
+                          </Box>
+                        </a>
+                      ) : (
+                        <></>
+                      )}
                     </SponsorCard>
                   </Grid>
                 ))}
               </Grid>
             </SponsorList>
-          ))} */}
+          ))}
         </Grid>
       </TocContainer>
     </ThemeProvider>
