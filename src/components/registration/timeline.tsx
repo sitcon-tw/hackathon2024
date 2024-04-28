@@ -19,6 +19,7 @@ export default function Timeline() {
         height={0}
         style={{ width: '100%', height: 'auto', margin: '10px', zIndex: -1 }}
       />
+      <Typography marginBottom="2vh">由於報名資訊尚待調整，開始報名時間將由原訂 4/29 更動至 5/1。</Typography>
     </Box>
   );
 }
