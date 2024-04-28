@@ -37,13 +37,16 @@ export default function Header() {
           </Link>
         ))}
         {!isMobile && (
-          <Link
+          <a
             href="https://sitcon.kktix.cc/events/sitcon-hackathon2024"
-            target="_balnk"
-            onClick={toggle.off}
+            target="_blank"
+            className="btn-color"
+            style={{
+              marginTop: '-1.5vh'
+            }}
           >
             立即報名
-          </Link>
+          </a>
         )}
       </nav>
     </header>

@@ -62,11 +62,14 @@ interface RainbowDialogProps {
   open: boolean;
   onClose: (value: string) => void;
   children: JSX.Element | JSX.Element[];
+  white: true;
 }
 function PaperComponent(props: PaperProps) {
   return <Paper sx={{ background: '#0000' }} {...props} />;
 }
-export function RainbowDialog({ onClose, open, children }: RainbowDialogProps) {
+export function RainbowDialog({ onClose, open, children, white }: RainbowDialogProps) {
+  let colorCode = '0, 0, 0';
+  if (white) colorCode = '256, 256, 256';
   return (
     <Dialog
       onClose={onClose}
@@ -82,8 +85,7 @@ export function RainbowDialog({ onClose, open, children }: RainbowDialogProps) {
           borderColor: '#0000',
           boxSizing: 'border-box',
           borderRadius: '30px',
-          background:
-            'linear-gradient(90deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 1)) padding-box, linear-gradient(90deg, #3D3393 0%, #2B76B9 31.5%, #2CACD1 58%, #35EB93 81%, #73BB3A 100%) border-box'
+          background: `linear-gradient(90deg, rgba(${colorCode}, 1), rgba(${colorCode}, 1)) padding-box, linear-gradient(90deg, #3D3393 0%, #2B76B9 31.5%, #2CACD1 58%, #35EB93 81%, #73BB3A 100%) border-box`
         }}
       >
         {children}

@@ -8,6 +8,7 @@ import { useMobile } from '@/utils/RWD';
 
 import data from '@/assets/sponsor';
 import Link from 'next/link';
+import CompanySponsorCard from '@/components/sponsor/CompanySponsorCard';
 
 const styles = {
   button: {
@@ -100,7 +101,7 @@ export default function SponsorPage() {
 
           <SponsorList type="共同主辦">
             <Grid container direction="row" gap="3.7vw" flexWrap={isMobile ? undefined : 'nowrap'}>
-              <SponsorCard>
+              {/* <SponsorCard>
                 <Typography variant="h3" fontWeight="bold" color="black">
                   中央研究院資訊科學研究所
                 </Typography>
@@ -117,7 +118,7 @@ export default function SponsorPage() {
                   位研究人員，另外有 29 位博士後研究學者，將近 300
                   位專任之資訊技術人員與非全時之研究助理，支援資訊領域之研究與系統之開發。「件件工作，反映自我，凡經我手，必為佳作」是全體同仁一致秉持的工作信念，重視工作之卓越品質，發揮最佳綜效之團隊精神。
                 </Typography>
-              </SponsorCard>
+              </SponsorCard> */}
               <SponsorCard>
                 <Typography variant="h3" fontWeight="bold" color="black">
                   財團法人開放文化基金會
@@ -127,7 +128,7 @@ export default function SponsorPage() {
                   alt="OCF"
                   width="0"
                   height="0"
-                  style={{ marginTop: '2vh', width: isMobile ? '90%' : '70%', height: 'auto' }}
+                  style={{ marginTop: '2vh', width: isMobile ? '90%' : '40%', height: 'auto' }}
                 />
                 <Typography variant="body1" fontWeight="500" marginTop="2vh" color="black">
                   開放文化基金會成立於 2014
@@ -159,55 +160,15 @@ export default function SponsorPage() {
 
           {data.map(({ type, sponsors }, idx) => (
             <SponsorList type={type} key={idx}>
-              <Grid
-                container
-                direction="row"
-                gap="2vw"
-                flexWrap={isMobile ? undefined : 'nowrap'}
-                justifyContent="space-between"
-              >
+              <Grid container direction="row" gap="2vw" justifyContent="space-between">
                 {sponsors.map(({ name, image, description, url }, idx) => (
-                  <Grid key={idx} item flex={isMobile ? '40%' : undefined}>
-                    <SponsorCard>
-                      <Typography variant="h3" fontWeight="bold" color="black">
-                        {name}
-                      </Typography>
-                      <Image
-                        src={`/2024/images/sponsor/${image}`}
-                        alt={`${image}`}
-                        width="0"
-                        height="0"
-                        style={{
-                          marginTop: '2vh',
-                          width: isMobile ? '70%' : '70%',
-                          height: 'auto'
-                        }}
-                      />
-                      <Typography
-                        variant="body1"
-                        fontWeight="500"
-                        marginTop="2.5vh"
-                        color="black"
-                        whiteSpace="pre-line"
-                      >
-                        {description}
-                      </Typography>
-                      {url !== '' ? (
-                        <a className="btn-color" href={url} target="_blank">
-                          <Box>
-                            <Typography
-                              variant="h4"
-                              fontWeight="bold"
-                              style={{ padding: '1.5vh 3vw' }}
-                            >
-                              前往網站
-                            </Typography>
-                          </Box>
-                        </a>
-                      ) : (
-                        <></>
-                      )}
-                    </SponsorCard>
+                  <Grid key={idx} item xs={isMobile ? 5 : 3}>
+                    <CompanySponsorCard
+                      name={name}
+                      image={image}
+                      description={description}
+                      url={url}
+                    />
                   </Grid>
                 ))}
               </Grid>
