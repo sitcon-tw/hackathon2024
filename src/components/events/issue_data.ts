@@ -12,12 +12,13 @@ const data = [
       },
       {
         title: '緩解數位落差',
-        description: '',
+        description: '關懷數位弱勢，共創包容科技環境，緩解數位落差，讓每個人都能受惠於數位化發展。',
         sponsor: 'iis'
       },
       {
         title: '消除校園歧視',
-        description: '',
+        description:
+          '建立包容與尊重多元的文化，讓年輕世代正視歧視衝突，打造令人安心學習與成長的環境。',
         sponsor: 'sitcon'
       }
     ],
@@ -37,12 +38,12 @@ const data = [
       },
       {
         title: '智慧城市',
-        description: '',
+        description: '透過創新科技與開放資料，公私協力，打造以人民為核心的智慧城市。',
         sponsor: 'iis'
       },
       {
         title: '學生自治',
-        description: '',
+        description: '培養學生責任與自主能力，促進學生與各界的溝通，拓展學生參與的各種可能性。',
         sponsor: 'sitcon'
       }
     ],
@@ -62,12 +63,13 @@ const data = [
       },
       {
         title: '除癮之道，解憂之鑰',
-        description: '',
+        description: '「癮」往往是萬惡之源。讓我們運用科技，杜絕成癮，打破生命的枷鎖。',
         sponsor: 'iis'
       },
       {
         title: '心靈照護與關懷 ',
-        description: '',
+        description:
+          '營造溫馨社會，促進情感支持與心理健康，提供包容環境，讓人們重視自己的心理需求。',
         sponsor: 'sitcon'
       }
     ],

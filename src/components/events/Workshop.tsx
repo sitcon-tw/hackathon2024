@@ -13,7 +13,7 @@ export default function Workshop() {
         </Typography>
       </WithGradient>
       <Typography variant="body1">
-        <b>本次競賽合作的資源提供方會提供賽前工作坊。</b>
+        <b>本次競賽合作的資源提供方會提供一日工作坊。</b>
         透過工作坊，參與者能夠更加熟悉的運用資源提供方提供的資源及服務，建立更強的技能基礎，並學習如何將資源提供方提供的資源與服務整合至他們的專案中。
       </Typography>
       <Grid item container alignItems="center" direction="column">
