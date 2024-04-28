@@ -17,7 +17,11 @@ export default function Workshop() {
         透過工作坊，參與者能夠更加熟悉的運用資源提供方提供的資源及服務，建立更強的技能基礎，並學習如何將資源提供方提供的資源與服務整合至他們的專案中。
       </Typography>
       <Grid item container alignItems="center" direction="column">
-        <a className="btn-color" href="#" target="_blank" style={{ visibility: 'hidden' }}>
+        <a
+          className="btn-color"
+          href="https://drive.google.com/file/d/1qV2juaOjx2y9bnVoBVZk76v0FWStnFVk/view?usp=sharing"
+          target="_blank"
+        >
           <Box>
             <Typography variant="h4" fontWeight="bold" style={{ padding: '10px 40px' }}>
               詳細資訊

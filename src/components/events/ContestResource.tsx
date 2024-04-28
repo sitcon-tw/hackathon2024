@@ -7,7 +7,59 @@ import { RainbowDialog, WithGradient } from '@/utils/commonComponent';
 import guideline from '@/app/guideline';
 import { useMobile } from '@/utils/RWD';
 
-function MyCard() {
+const data = [
+  {
+    provider: '臺北市政府資訊局',
+    name: '臺北城市儀表板',
+    logo: 'city-dashboard.svg',
+    description:
+      '臺北城市儀表板是臺北市政府的資料視覺化平台，也是臺北市第一個完成原始碼開源的大型專案。',
+    references: [
+      {
+        title: '臺北城市儀表板',
+        url: 'https://citydashboard.taipei'
+      },
+      {
+        title: '儀表板技術文件',
+        url: 'https://tuic.gov.taipei/documentation'
+      },
+      {
+        title: '儀表板 GitHub',
+        url: 'https://github.com/tpe-doit/Taipei-City-Dashboard'
+      },
+      {
+        title: '儀表板開發建置指南',
+        url: 'https://www.youtube.com/watch?v=6Qrf_6e9rGY'
+      }
+    ]
+  },
+  {
+    provider: 'SITCON',
+    name: '開源力滿滿',
+    logo: 'SITCON-LOGO-icon.svg',
+    description:
+      'SITCON 提倡自由及開放原始碼精神，參與此組的團隊，不受資源的限制，能夠導入任意開源專案。',
+    references: [
+      {
+        title: '公開資源頁面',
+        url: 'https://hackathon.sitcon.org/2024/resources/'
+      }
+    ]
+  }
+];
+
+interface ResourceType {
+  provider: string;
+  name: string;
+  logo: string;
+  description: string;
+  references: {
+    title: string;
+    url: string;
+  }[];
+}
+
+function MyCard({ resource }: { resource: ResourceType }) {
   const [open, setOpen] = React.useState(false);
   const handleClickOpen = () => {
     setOpen(true);
@@ -16,23 +68,31 @@ function MyCard() {
     setOpen(false);
   };
   return (
-    <Grid item textAlign="center">
-      <Button onClick={handleClickOpen} sx={{}}>
+    <Grid container textAlign="center">
+      <Button onClick={handleClickOpen}>
         <Card
           sx={{
             borderRadius: '20px',
             border: '2px solid rgba(255, 255, 255, 0.5)',
-            background: 'rgba(255, 255, 255, 0.08)'
+            background: 'rgba(255, 255, 255, 0.08)',
+            width: '17rem'
           }}
         >
           <Grid container gap="2.5vh" direction="column" alignItems="center" padding="3vh 3vw">
             <Typography variant="h4" fontWeight="bold">
-              Telegram
+              {resource.provider}
             </Typography>
+            <Box width="100px" height="100px">
+              <Image
+                src={`/2024/images/events/resources/${resource.logo}`}
+                alt={resource.name}
+                width="0"
+                height="0"
+                style={{ width: 'auto', height: '100%' }}
+              />
+            </Box>
             <Typography variant="h4" fontWeight="bold">
-              Telegram Bot
-              <br />
-              聊天機器人
+              {resource.name}
             </Typography>
             <Grid
               item
@@ -61,10 +121,10 @@ function MyCard() {
       <RainbowDialog open={open} onClose={handleClose}>
         <Box textAlign="center">
           <Typography variant="h2" fontWeight="bold">
-            Telegram
+            {resource.provider}
           </Typography>
           <Typography variant="h2" fontWeight="bold">
-            Telegram Bot 聊天機器人
+            {resource.name}
           </Typography>
         </Box>
         <DialogContent>
@@ -72,8 +132,7 @@ function MyCard() {
             資源說明
           </Typography>
           <Typography variant="body1" marginTop="4vh">
-            是一種在 Telegram 平台幫助你執行各種功能的應用。
-            它們提供靈活的互動介面，為用戶完成各種任務或提供服務
+            {resource.description}
           </Typography>
 
           <Typography variant="h3" fontWeight="bold" marginTop="6vh">
@@ -84,20 +143,15 @@ function MyCard() {
             component="ol"
             sx={{ listStyle: 'disc', pl: 4, color: 'rgba(255, 253, 196, 1)' }}
           >
-            <Box component="li">
-              <a href="https://core.telegram.org/bots/api" target="_blank">
-                <Typography variant="body1" sx={{ textDecoration: 'underline' }}>
-                  Telegram Bot API
-                </Typography>
-              </a>
-            </Box>
-            <Box component="li">
-              <a href="https://telegram.me/BotFather" target="_blank">
-                <Typography variant="body1" sx={{ textDecoration: 'underline' }}>
-                  Telegram Bot Father
-                </Typography>
-              </a>
-            </Box>
+            {resource.references.map(({ title, url }, idx) => (
+              <Box component="li" key={idx}>
+                <a href={url} target="_blank">
+                  <Typography variant="body1" sx={{ textDecoration: 'underline' }}>
+                    {title}
+                  </Typography>
+                </a>
+              </Box>
+            ))}
           </Box>
         </DialogContent>
       </RainbowDialog>
@@ -106,7 +160,6 @@ function MyCard() {
 }
 
 export default function ContestResource() {
-  const isMobile = useMobile();
   return (
     <Box marginTop="13vh">
       <WithGradient color={guideline.color3}>
@@ -114,22 +167,12 @@ export default function ContestResource() {
           專案資源
         </Typography>
       </WithGradient>
-      <Grid container justifyContent="space-between" flexWrap={isMobile ? undefined : 'nowrap'}>
-        <Typography variant="h5" fontWeight="bold">
-          即將公開～
-        </Typography>
-        {/* <Grid item>
-          <MyCard />
-        </Grid>
-        <Grid item>
-          <MyCard />
-        </Grid>
-        <Grid item >
-          <MyCard />
-        </Grid>
-        <Grid item >
-          <MyCard />
-        </Grid> */}
+      <Grid container>
+        {data.map((d, idx) => (
+          <Grid item key={idx}>
+            <MyCard resource={d} />
+          </Grid>
+        ))}
       </Grid>
     </Box>
   );

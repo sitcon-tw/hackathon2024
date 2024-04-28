@@ -62,12 +62,12 @@ interface RainbowDialogProps {
   open: boolean;
   onClose: (value: string) => void;
   children: JSX.Element | JSX.Element[];
-  white: true;
+  white?: boolean;
 }
 function PaperComponent(props: PaperProps) {
   return <Paper sx={{ background: '#0000' }} {...props} />;
 }
-export function RainbowDialog({ onClose, open, children, white }: RainbowDialogProps) {
+export function RainbowDialog({ onClose, open, children, white = false }: RainbowDialogProps) {
   let colorCode = '0, 0, 0';
   if (white) colorCode = '256, 256, 256';
   return (
