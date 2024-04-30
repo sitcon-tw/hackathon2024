@@ -5,9 +5,28 @@ import Image from 'next/image';
 import { Typography, Box, Card, Grid, Button, DialogContent } from '@mui/material';
 import { RainbowDialog, WithGradient } from '@/utils/commonComponent';
 import guideline from '@/app/guideline';
-import { useMobile } from '@/utils/RWD';
 
 const data = [
+  {
+    provider: 'LINE',
+    name: 'Messaging API / LINE Front-end Framework (LIFF)',
+    logo: 'line.png',
+    description: '',
+    references: [
+      {
+        title: 'Messaging API',
+        url: 'https://developers.line.biz/en/docs/messaging-api/'
+      },
+      {
+        title: 'LINE Front-end Framework (LIFF)',
+        url: 'https://developers.line.biz/en/docs/liff/'
+      },
+      {
+        title: '使用規範',
+        url: 'https://terms2.line.me/LINE_Developers_Messaging_API?lang=zh-Hant'
+      }
+    ]
+  },
   {
     provider: '臺北市政府資訊局',
     name: '臺北城市儀表板',
@@ -68,27 +87,35 @@ function MyCard({ resource }: { resource: ResourceType }) {
     setOpen(false);
   };
   return (
-    <Grid container textAlign="center">
+    <Grid container textAlign="center" height="100%">
       <Button onClick={handleClickOpen}>
         <Card
           sx={{
             borderRadius: '20px',
             border: '2px solid rgba(255, 255, 255, 0.5)',
             background: 'rgba(255, 255, 255, 0.08)',
-            width: '17rem'
+            width: '17rem',
+            height: '100%'
           }}
         >
-          <Grid container gap="2.5vh" direction="column" alignItems="center" padding="3vh 3vw">
+          <Grid
+            container
+            gap="2.5vh"
+            direction="column"
+            alignItems="center"
+            padding="3vh 3vw"
+            height="100%"
+          >
             <Typography variant="h4" fontWeight="bold">
               {resource.provider}
             </Typography>
-            <Box width="100px" height="100px">
+            <Box height="100px">
               <Image
                 src={`/2024/images/events/resources/${resource.logo}`}
                 alt={resource.name}
                 width="0"
                 height="0"
-                style={{ width: 'auto', height: '100%' }}
+                style={{ width: 'auto', height: '100%', margin: 'auto' }}
               />
             </Box>
             <Typography variant="h4" fontWeight="bold">
@@ -96,6 +123,7 @@ function MyCard({ resource }: { resource: ResourceType }) {
             </Typography>
             <Grid
               item
+              marginTop="auto"
               container
               direction="row"
               justifyContent="flex-end"
@@ -169,7 +197,7 @@ export default function ContestResource() {
       </WithGradient>
       <Grid container>
         {data.map((d, idx) => (
-          <Grid item key={idx}>
+          <Grid item key={idx} height="auto">
             <MyCard resource={d} />
           </Grid>
         ))}
