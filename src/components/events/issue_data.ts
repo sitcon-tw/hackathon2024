@@ -6,8 +6,9 @@ const data = [
     src: '平等起跑線',
     subproblem: [
       {
-        title: '社群媒體上的仇恨與歧視言論',
-        description: '',
+        title: '推廣性別平等與情感教育',
+        description:
+          '透過 LINE Chatbot 推廣性別平等與情感教育，利用互動問答、情境模擬和故事分享，建立一個更加包容和理解的社會環境。',
         sponsor: 'line'
       },
       {
@@ -32,13 +33,14 @@ const data = [
     src: '公創新世代',
     subproblem: [
       {
-        title: '強化數位韌性',
-        description: '',
+        title: '對抗網路詐騙假訊息',
+        description:
+          '提出結合 LINE 官方帳號與生成式 AI 技術，即時識別詐騙假訊息，教育用戶識別詐騙並提供防範建議，期望建立更安全的網路環境。',
         sponsor: 'line'
       },
       {
         title: '智慧城市',
-        description: '透過創新科技與開放資料，公私協力，打造以人民為核心的智慧城市。',
+        description: '透過創新科技與開放資料，公私協力，打造以人民為核心的智慧城市',
         sponsor: 'iis'
       },
       {
@@ -57,8 +59,9 @@ const data = [
     src: '數位心擁',
     subproblem: [
       {
-        title: '錯失恐懼症 FOMO',
-        description: '',
+        title: '管理資訊，避免 FoMO',
+        description:
+          '結合 LINE 平台和 AI 技術，幫助同學們有效掌握資訊，減輕 FoMO（錯失恐懼症）帶來的焦慮，促進心理健康和學習效率。',
         sponsor: 'line'
       },
       {
