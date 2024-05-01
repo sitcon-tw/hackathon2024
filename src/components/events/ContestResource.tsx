@@ -9,7 +9,7 @@ import guideline from '@/app/guideline';
 const data = [
   {
     provider: 'LINE',
-    name: 'Messaging API / LINE Front-end Framework (LIFF)',
+    name: 'LINE Bot/LIFF',
     logo: 'line.png',
     description: '',
     references: [
@@ -156,12 +156,16 @@ function MyCard({ resource }: { resource: ResourceType }) {
           </Typography>
         </Box>
         <DialogContent>
-          <Typography variant="h3" fontWeight="bold">
-            資源說明
-          </Typography>
-          <Typography variant="body1" marginTop="4vh">
-            {resource.description}
-          </Typography>
+          {resource.description !== '' && (
+            <>
+              <Typography variant="h3" fontWeight="bold">
+                資源說明
+              </Typography>
+              <Typography variant="body1" marginTop="4vh">
+                {resource.description}
+              </Typography>
+            </>
+          )}
 
           <Typography variant="h3" fontWeight="bold" marginTop="6vh">
             相關資料
