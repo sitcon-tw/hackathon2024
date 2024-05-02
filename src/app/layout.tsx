@@ -1,7 +1,7 @@
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
 import '~/globals.css';
 import { Metadata } from 'next';
-import { GoogleAnalytics } from '@next/third-parties/google';
+import { GoogleTagManager } from '@next/third-parties/google';
 
 interface RootLayoutProps {
   children: React.ReactNode;
@@ -15,7 +15,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
       <head>
-        <GoogleAnalytics gaId="GTM-NWJD4852" />
+        <GoogleTagManager gtmId="GTM-NWJD4852" />
       </head>
       <body>
         <noscript>
