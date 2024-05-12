@@ -1,15 +1,12 @@
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
 import '~/globals.css';
-import { Metadata } from 'next';
 import { GoogleTagManager } from '@next/third-parties/google';
 
 interface RootLayoutProps {
   children: React.ReactNode;
 }
 
-export const metadata: Metadata = {
-  title: 'SITCON Hackathon 2024'
-};
+export { default as metadata } from '@/metaData';
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
