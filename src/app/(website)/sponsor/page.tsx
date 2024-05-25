@@ -101,24 +101,31 @@ export default function SponsorPage() {
 
           <SponsorList type="共同主辦">
             <Grid container direction="row" gap="3.7vw" flexWrap={isMobile ? undefined : 'nowrap'}>
-              {/* <SponsorCard>
+              <SponsorCard>
                 <Typography variant="h3" fontWeight="bold" color="black">
-                  中央研究院資訊科學研究所
+                  臺北市政府公務人員訓練處
                 </Typography>
                 <Image
-                  src="/2024/images/sponsor/iis 1.png"
-                  alt="IIS"
+                  src="/2024/images/sponsor/csd.png"
+                  alt="OCF"
                   width="0"
                   height="0"
-                  style={{ marginTop: '6vh', width: isMobile ? '90%' : '45%', height: 'auto' }}
+                  style={{ marginTop: '2vh', width: isMobile ? '90%' : '50%', height: 'auto' }}
                 />
-                <Typography variant="body1" fontWeight="500" marginTop="5vh" color="black">
-                  中央研究院資訊科學研究所於 1977 年開始設立籌備處，歷經五年籌備， 於 1982 年 9
-                  月正式成立研究所，是中央研究院數理組十一個單位之一。目前編制內有 39
-                  位研究人員，另外有 29 位博士後研究學者，將近 300
-                  位專任之資訊技術人員與非全時之研究助理，支援資訊領域之研究與系統之開發。「件件工作，反映自我，凡經我手，必為佳作」是全體同仁一致秉持的工作信念，重視工作之卓越品質，發揮最佳綜效之團隊精神。
+                <Typography variant="body1" fontWeight="500" marginTop="2vh" color="black">
+                  公訓處成立於民國60年，主責臺北市政府所屬公務人員各項在職與職前訓練，兼具教學、研究、會議等多重功能，是目前國內設備最完善、最具規模的公務人力培訓機構之一。
+                  <br />
+                  人才是城市發展的基礎，投資公務員就是投資城市未來的競爭力，公訓處秉持「愛、成長、卓越」的理念，用心呵護並培育公務人才，積極為市民創造更優質的市政服務，實踐永續共融
+                  ‧ 希望首都之願景。
                 </Typography>
-              </SponsorCard> */}
+                <a className="btn-color" href="https://dcsd.gov.taipei/" target="_blank">
+                  <Box>
+                    <Typography variant="h4" fontWeight="bold" style={{ padding: '1.5vh 3vw' }}>
+                      官方網站
+                    </Typography>
+                  </Box>
+                </a>
+              </SponsorCard>
               <SponsorCard>
                 <Typography variant="h3" fontWeight="bold" color="black">
                   財團法人開放文化基金會
@@ -128,7 +135,7 @@ export default function SponsorPage() {
                   alt="OCF"
                   width="0"
                   height="0"
-                  style={{ marginTop: '2vh', width: isMobile ? '90%' : '40%', height: 'auto' }}
+                  style={{ marginTop: '2vh', width: isMobile ? '90%' : '50%', height: 'auto' }}
                 />
                 <Typography variant="body1" fontWeight="500" marginTop="2vh" color="black">
                   開放文化基金會成立於 2014
