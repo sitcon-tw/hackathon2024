@@ -47,14 +47,14 @@ export default function CompanySponsorCard({ name, url, image, description }: Pr
                 alt={name}
                 width="0"
                 height="0"
-                style={{ marginTop: '2vh', width: isMobile ? '50%' : '50%', height: 'auto' }}
+                style={{ marginTop: '1vh', width: isMobile ? '30%' : '30%', height: 'auto' }}
               />
               <Typography
                 variant="body1"
                 fontWeight="500"
                 marginTop="1vh"
                 color="black"
-                marginBottom="5vh"
+                marginBottom="2vh"
               >
                 {description}
               </Typography>
