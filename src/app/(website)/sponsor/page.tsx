@@ -100,14 +100,43 @@ export default function SponsorPage() {
           </SponsorList>
 
           <SponsorList type="共同主辦">
-            <Grid container direction="row" gap="3.7vw" flexWrap={isMobile ? undefined : 'nowrap'}>
+            <Grid
+              container
+              direction="column"
+              gap="3.7vw"
+              flexWrap={isMobile ? undefined : 'nowrap'}
+            >
+              <SponsorCard>
+                <Typography variant="h3" fontWeight="bold" color="black">
+                  臺北市政府資訊局
+                </Typography>
+                <Image
+                  src="/2024/images/sponsor/tit.png"
+                  alt="Taipei IT"
+                  width="0"
+                  height="0"
+                  style={{ marginTop: '2vh', width: isMobile ? '90%' : '50%', height: 'auto' }}
+                />
+                <Typography variant="body1" fontWeight="500" marginTop="2vh" color="black">
+                  臺北市政府資訊局隸屬於臺北市政府，為臺北市政府資訊業務主管機關，主要職掌包括：推動臺北市政管理及便民服務電子化，資訊基礎建設及資通安全管理，以及智慧城市等各項數位創新工作的推動。
+                  <br />
+                  資訊局以「打造科技普惠的無限臺北城」為願景，為邁向智慧城市並善用資訊科技提供便捷服務，以及推展數位平權實踐弱勢關懷，從「數位韌性」、「科技普惠」、「公私協力」三大施政主軸著手，展現各項重要施政的成果，以期達成數位服務轉型以及回應市民對於服務型政府的殷切期盼。
+                </Typography>
+                <a className="btn-color" href="https://doit.gov.taipei/" target="_blank">
+                  <Box>
+                    <Typography variant="h4" fontWeight="bold" style={{ padding: '1.5vh 3vw' }}>
+                      官方網站
+                    </Typography>
+                  </Box>
+                </a>
+              </SponsorCard>
               <SponsorCard>
                 <Typography variant="h3" fontWeight="bold" color="black">
                   臺北市政府公務人員訓練處
                 </Typography>
                 <Image
                   src="/2024/images/sponsor/csd.png"
-                  alt="OCF"
+                  alt="DCSD"
                   width="0"
                   height="0"
                   style={{ marginTop: '2vh', width: isMobile ? '90%' : '50%', height: 'auto' }}
@@ -152,11 +181,11 @@ export default function SponsorPage() {
                 智慧創新跨域人才培育計畫
               </Typography>
               <Image
-                src="/2024/images/sponsor/ITSA_LOGO1 1.png"
+                src="/2024/images/sponsor/ITSA.png"
                 alt="ITSA"
                 width="0"
                 height="0"
-                style={{ marginTop: '2vh', width: isMobile ? '60%' : '20%', height: 'auto' }}
+                style={{ marginTop: '2vh', width: isMobile ? '60%' : '40%', height: 'auto' }}
               />
               <Typography variant="body1" fontWeight="500" marginTop="2.5vh" color="black">
                 ITSA
