@@ -14,7 +14,8 @@ const metadata: Metadata = {
     url: 'https://hackathon.sitcon.org/2024',
     locale: 'zh_TW',
     siteName: 'SITCON Hackathon',
-    type: 'website'
+    type: 'website',
+    images: 'https://hackathon.sitcon.org/2024/images/cover-image.png'
   }
 };
 
