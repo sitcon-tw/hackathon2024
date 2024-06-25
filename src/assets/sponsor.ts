@@ -10,11 +10,11 @@ const data = [
         url: 'https://techblog.lycorp.co.jp/zh-hant/search?q=intern'
       }
     ]
-  },
-  {
-    type: '前瞻級',
-    sponsors: []
   }
+  // {
+  //   type: '前瞻級',
+  //   sponsors: []
+  // }
   // {
   //   type: '新芽級',
   //   sponsors: [
