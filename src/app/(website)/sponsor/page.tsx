@@ -194,6 +194,28 @@ export default function SponsorPage() {
             </SponsorCard>
           </SponsorList>
 
+          <SponsorList type="特別感謝">
+            <SponsorCard>
+              <Typography variant="h3" fontWeight="bold" color="black">
+                Epoch School
+              </Typography>
+              <Image
+                src="/2024/images/sponsor/Epoch.png"
+                alt="EPOCH"
+                width="0"
+                height="0"
+                style={{ marginTop: '2vh', width: isMobile ? '60%' : '40%', height: 'auto' }}
+              />
+              <a className="btn-color" href="https://school.epoch.org.tw/" target="_blank">
+                <Box>
+                  <Typography variant="h4" fontWeight="bold" style={{ padding: '1.5vh 3vw' }}>
+                    官方網站
+                  </Typography>
+                </Box>
+              </a>
+            </SponsorCard>
+          </SponsorList>
+
           {data.map(({ type, sponsors }, idx) => (
             <SponsorList type={type} key={idx}>
               <Grid container direction="row" gap="2vw" justifyContent="space-between">
