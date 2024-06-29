@@ -194,6 +194,36 @@ export default function SponsorPage() {
             </SponsorCard>
           </SponsorList>
 
+          <SponsorList type="深耕級">
+            <SponsorCard>
+              <Typography variant="h3" fontWeight="bold" color="black">
+                LINE
+              </Typography>
+              <Image
+                src="/2024/images/sponsor/line.png"
+                alt="EPOCH"
+                width="0"
+                height="0"
+                style={{ marginTop: '2vh', width: isMobile ? '60%' : '40%', height: 'auto' }}
+              />
+              <Typography variant="body1" fontWeight="500" marginTop="2.5vh" color="black">
+                總部位於日本的LINE以「拉近你我的距離」為企業使命，透過多元的行動服務與內容，致力將人們、資訊與社會緊密連結。自2011年6月以通訊軟體的型態推出，現更推展其多元的全球生態系，並將觸角延伸至人工智慧、金融科技等領域，積極實現「智慧入口」的願景，2021年3月，LINE與日本規模最大的網路科技集團之一Z
+                Holdings 正式整併，未來也將持續提供用戶享有最即時、便利的行動生活。
+              </Typography>
+              <a
+                className="btn-color"
+                href="https://techblog.lycorp.co.jp/zh-hant/search?q=intern"
+                target="_blank"
+              >
+                <Box>
+                  <Typography variant="h4" fontWeight="bold" style={{ padding: '1.5vh 3vw' }}>
+                    官方網站
+                  </Typography>
+                </Box>
+              </a>
+            </SponsorCard>
+          </SponsorList>
+
           <SponsorList type="特別感謝">
             <SponsorCard>
               <Typography variant="h3" fontWeight="bold" color="black">
@@ -215,23 +245,6 @@ export default function SponsorPage() {
               </a>
             </SponsorCard>
           </SponsorList>
-
-          {data.map(({ type, sponsors }, idx) => (
-            <SponsorList type={type} key={idx}>
-              <Grid container direction="row" gap="2vw" justifyContent="space-between">
-                {sponsors.map(({ name, image, description, url }, idx) => (
-                  <Grid key={idx} item xs={isMobile ? 5 : 3}>
-                    <CompanySponsorCard
-                      name={name}
-                      image={image}
-                      description={description}
-                      url={url}
-                    />
-                  </Grid>
-                ))}
-              </Grid>
-            </SponsorList>
-          ))}
         </Grid>
       </TocContainer>
     </ThemeProvider>
