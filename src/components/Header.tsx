@@ -24,8 +24,8 @@ export default function Header() {
         SITCON Hackathon
       </Link>
       <div className="mobile-options">
-        <a href="https://sitcon.kktix.cc/events/sitcon-hackathon2024" target="_blank">
-          <button className="btn-color">活動報名</button>
+        <a href="https://github.com/sitcon-hackathon2024-archive" target="_blank">
+          <button className="btn-color">作品存放區</button>
         </a>
         <AiOutlineMenu onClick={() => toggle.on()} />
       </div>
@@ -38,14 +38,14 @@ export default function Header() {
         ))}
         {!isMobile && (
           <a
-            href="https://sitcon.kktix.cc/events/sitcon-hackathon2024"
+            href="https://github.com/sitcon-hackathon2024-archive"
             target="_blank"
             className="btn-color"
             style={{
               marginTop: '-1.5vh'
             }}
           >
-            立即報名
+            作品存放區
           </a>
         )}
       </nav>
